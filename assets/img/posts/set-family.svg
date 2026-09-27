@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">集合族及其并交</title>
+  <desc id="desc">展示由指标集合编号的集合族及其并集和交集。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f0fdf4"/>
+      <stop offset="1" stop-color="#eff6ff"/>
+    </linearGradient>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .box { stroke: #78909c; stroke-width: 2; rx: 18; }
+    </style>
+  </defs>
+  <rect width="1100" height="520" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">集合族：用指标统一管理许多集合</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">{Aᵢ}ᵢ∈I 表示由指标 i 编号的一组集合</text>
+
+  <rect x="85" y="160" width="220" height="115" class="box" fill="#fee2e2"/>
+  <text x="195" y="210" text-anchor="middle" class="zh label">A₁</text>
+  <text x="195" y="245" text-anchor="middle" class="zh small">{1,2,3}</text>
+  <rect x="440" y="160" width="220" height="115" class="box" fill="#dbeafe"/>
+  <text x="550" y="210" text-anchor="middle" class="zh label">A₂</text>
+  <text x="550" y="245" text-anchor="middle" class="zh small">{2,3,4}</text>
+  <rect x="795" y="160" width="220" height="115" class="box" fill="#dcfce7"/>
+  <text x="905" y="210" text-anchor="middle" class="zh label">A₃</text>
+  <text x="905" y="245" text-anchor="middle" class="zh small">{3,4,5}</text>
+
+  <path d="M195 295 V350 H545" stroke="#7c8ca1" stroke-width="2"/>
+  <path d="M550 295 V350" stroke="#7c8ca1" stroke-width="2"/>
+  <path d="M905 295 V350 H555" stroke="#7c8ca1" stroke-width="2"/>
+  <rect x="300" y="350" width="500" height="65" rx="18" fill="#ffffff" stroke="#8ca1b8" stroke-width="2"/>
+  <text x="550" y="391" text-anchor="middle" class="zh label">集合族 𝓕={A₁,A₂,A₃}</text>
+
+  <rect x="95" y="445" width="420" height="50" rx="14" fill="#fff7ed" stroke="#d6a15c" stroke-width="2"/>
+  <text x="305" y="478" text-anchor="middle" class="zh small">⋃ᵢAᵢ：至少属于一个 Aᵢ</text>
+  <rect x="585" y="445" width="420" height="50" rx="14" fill="#f5f3ff" stroke="#9a8ec2" stroke-width="2"/>
+  <text x="795" y="478" text-anchor="middle" class="zh small">⋂ᵢAᵢ：属于每一个 Aᵢ</text>
+</svg>

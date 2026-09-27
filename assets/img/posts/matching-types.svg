@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">极大匹配、最大匹配和完美匹配</title>
+  <desc id="desc">同一二分图中，左侧只选一条边的匹配已无法直接加入边，但右侧能找到两条边的完美匹配。</desc>
+  <defs><style>
+    .zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#cbd5e1;stroke-width:5;stroke-linecap:round}.selected{stroke:#e07a5f;stroke-width:9;stroke-linecap:round}.node{fill:#dbeafe;stroke:#3b82f6;stroke-width:3}.ynode{fill:#fef3c7;stroke:#d97706;stroke-width:3}
+  </style></defs>
+  <rect width="1200" height="620" rx="28" fill="#f8fafc"/>
+  <text x="600" y="55" text-anchor="middle" class="zh title">极大匹配不一定是最大匹配</text>
+  <rect x="48" y="95" width="525" height="440" rx="22" class="panel"/>
+  <text x="310" y="140" text-anchor="middle" class="zh label">极大匹配：只有 1 条边</text>
+  <line x1="185" y1="245" x2="435" y2="245" class="edge"/><line x1="185" y1="385" x2="435" y2="245" class="edge"/><line x1="185" y1="385" x2="435" y2="385" class="edge"/>
+  <line x1="185" y1="385" x2="435" y2="245" class="selected"/>
+  <circle cx="185" cy="245" r="27" class="node"/><circle cx="185" cy="385" r="27" class="node"/><circle cx="435" cy="245" r="27" class="ynode"/><circle cx="435" cy="385" r="27" class="ynode"/>
+  <text x="185" y="253" text-anchor="middle" class="zh small">a</text><text x="185" y="393" text-anchor="middle" class="zh small">b</text><text x="435" y="253" text-anchor="middle" class="zh small">1</text><text x="435" y="393" text-anchor="middle" class="zh small">2</text>
+  <text x="310" y="475" text-anchor="middle" class="zh small">再加任意边，都会共享端点</text>
+  <rect x="627" y="95" width="525" height="440" rx="22" class="panel"/>
+  <text x="890" y="140" text-anchor="middle" class="zh label">最大且完美：2 条边</text>
+  <line x1="765" y1="245" x2="1015" y2="245" class="edge"/><line x1="765" y1="385" x2="1015" y2="245" class="edge"/><line x1="765" y1="385" x2="1015" y2="385" class="edge"/>
+  <line x1="765" y1="245" x2="1015" y2="245" class="selected"/><line x1="765" y1="385" x2="1015" y2="385" class="selected"/>
+  <circle cx="765" cy="245" r="27" class="node"/><circle cx="765" cy="385" r="27" class="node"/><circle cx="1015" cy="245" r="27" class="ynode"/><circle cx="1015" cy="385" r="27" class="ynode"/>
+  <text x="765" y="253" text-anchor="middle" class="zh small">a</text><text x="765" y="393" text-anchor="middle" class="zh small">b</text><text x="1015" y="253" text-anchor="middle" class="zh small">1</text><text x="1015" y="393" text-anchor="middle" class="zh small">2</text>
+  <text x="890" y="475" text-anchor="middle" class="zh small">换边后，4 个顶点全部被覆盖</text>
+</svg>

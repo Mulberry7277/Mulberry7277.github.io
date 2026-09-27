@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">有向无环图的拓扑排序</title>
+  <desc id="desc">任务 A 在 B 和 C 之前，B 与 C 在 D 之前，D 在 E 之前；B 和 C 可以交换顺序。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12 Z" fill="#64748b"/></marker>
+    <style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:32px;font-weight:700}.label{font-size:25px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#64748b;stroke-width:5;stroke-linecap:round;marker-end:url(#arrow)}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.box{fill:#eff6ff;stroke:#93c5fd;stroke-width:2}</style>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="#f8fafc"/>
+  <text x="600" y="55" text-anchor="middle" class="zh title">拓扑序：每条依赖边都从前指向后</text>
+  <rect x="50" y="95" width="1100" height="455" rx="22" class="panel"/>
+  <text x="600" y="140" text-anchor="middle" class="zh label">有向无环图（DAG）</text>
+  <line x1="205" y1="300" x2="395" y2="224" class="edge"/><line x1="205" y1="330" x2="395" y2="406" class="edge"/>
+  <line x1="475" y1="219" x2="657" y2="297" class="edge"/><line x1="475" y1="411" x2="657" y2="333" class="edge"/>
+  <line x1="735" y1="315" x2="927" y2="315" class="edge"/>
+  <circle cx="170" cy="315" r="33" class="node"/><circle cx="440" cy="205" r="33" class="node"/><circle cx="440" cy="425" r="33" class="node"/><circle cx="700" cy="315" r="33" class="node"/><circle cx="970" cy="315" r="33" class="node"/>
+  <text x="170" y="325" text-anchor="middle" class="zh label">A</text><text x="440" y="215" text-anchor="middle" class="zh label">B</text><text x="440" y="435" text-anchor="middle" class="zh label">C</text><text x="700" y="325" text-anchor="middle" class="zh label">D</text><text x="970" y="325" text-anchor="middle" class="zh label">E</text>
+  <rect x="190" y="475" width="380" height="50" rx="12" class="box"/><text x="380" y="508" text-anchor="middle" class="zh small">合法：A → B → C → D → E</text>
+  <rect x="630" y="475" width="380" height="50" rx="12" class="box"/><text x="820" y="508" text-anchor="middle" class="zh small">也合法：A → C → B → D → E</text>
+</svg>

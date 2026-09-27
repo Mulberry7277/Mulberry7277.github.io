@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">度分布与 hub 节点</title>
+  <desc id="desc">窄分布的大多数顶点度数相近，重尾分布中少数顶点具有很高的度。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.axis{stroke:#64748b;stroke-width:3}.bar{fill:#93c5fd}.tail{fill:#fca5a5}.hub{fill:#dc2626}.line{fill:none;stroke:#dc2626;stroke-width:4}
+  </style></defs>
+  <rect width="1200" height="620" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">度分布告诉我们：网络中是否存在少数 hub</text>
+  <rect x="45" y="95" width="520" height="445" rx="22" class="panel"/><text x="305" y="140" text-anchor="middle" class="zh label">窄分布：度数相近</text>
+  <line x1="110" y1="465" x2="505" y2="465" class="axis"/><line x1="110" y1="185" x2="110" y2="465" class="axis"/>
+  <rect x="145" y="380" width="45" height="85" class="bar"/><rect x="205" y="320" width="45" height="145" class="bar"/><rect x="265" y="250" width="45" height="215" class="bar"/><rect x="325" y="300" width="45" height="165" class="bar"/><rect x="385" y="375" width="45" height="90" class="bar"/>
+  <text x="305" y="510" text-anchor="middle" class="zh small">大多数顶点接近平均度</text>
+  <rect x="635" y="95" width="520" height="445" rx="22" class="panel"/><text x="895" y="140" text-anchor="middle" class="zh label">重尾分布：少数 hub</text>
+  <line x1="700" y1="465" x2="1095" y2="465" class="axis"/><line x1="700" y1="185" x2="700" y2="465" class="axis"/>
+  <path d="M730 255 C770 270 800 315 835 360 C875 405 925 435 985 450 C1035 458 1070 462 1090 464" class="line"/>
+  <circle cx="750" cy="275" r="8" class="hub"/><circle cx="790" cy="320" r="8" class="hub"/><circle cx="835" cy="360" r="8" class="hub"/>
+  <text x="895" y="510" text-anchor="middle" class="zh small">少数顶点拥有远高于平均值的度</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">聚类系数与平均路径长度</title>
+  <desc id="desc">左侧有紧密三角形团簇，右侧有跨区域的长程连接，展示两个网络指标的直观含义。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#94a3b8;stroke-width:5;stroke-linecap:round}.tri{stroke:#e07a5f;stroke-width:7;stroke-linecap:round}.shortcut{stroke:#4f8edb;stroke-width:7;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.box{fill:#fff7ed;stroke:#fdba74;stroke-width:2}</style></defs>
+  <rect width="1200" height="650" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">两个指标：局部团簇有多紧，整体距离有多短</text>
+  <rect x="45" y="95" width="520" height="480" rx="22" class="panel"/><text x="305" y="140" text-anchor="middle" class="zh label">聚类系数 C：邻居是否互相连接</text>
+  <line x1="160" y1="275" x2="285" y2="205" class="tri"/><line x1="285" y1="205" x2="410" y2="275" class="tri"/><line x1="410" y1="275" x2="285" y2="410" class="tri"/><line x1="285" y1="410" x2="160" y2="275" class="tri"/><line x1="160" y1="275" x2="410" y2="275" class="tri"/>
+  <circle cx="160" cy="275" r="25" class="node"/><circle cx="285" cy="205" r="25" class="node"/><circle cx="410" cy="275" r="25" class="node"/><circle cx="285" cy="410" r="25" class="node"/>
+  <text x="305" y="510" text-anchor="middle" class="zh small">三角形越多，局部邻居越紧密</text>
+  <rect x="635" y="95" width="520" height="480" rx="22" class="panel"/><text x="895" y="140" text-anchor="middle" class="zh label">平均路径长度 L：远点是否可达</text>
+  <line x1="745" y1="265" x2="850" y2="205" class="edge"/><line x1="850" y1="205" x2="950" y2="265" class="edge"/><line x1="950" y1="265" x2="1055" y2="205" class="edge"/><line x1="745" y1="425" x2="850" y2="485" class="edge"/><line x1="850" y1="485" x2="950" y2="425" class="edge"/><line x1="950" y1="425" x2="1055" y2="485" class="edge"/>
+  <line x1="745" y1="265" x2="1055" y2="485" class="shortcut"/>
+  <circle cx="745" cy="265" r="24" class="node"/><circle cx="850" cy="205" r="24" class="node"/><circle cx="950" cy="265" r="24" class="node"/><circle cx="1055" cy="205" r="24" class="node"/><circle cx="745" cy="425" r="24" class="node"/><circle cx="850" cy="485" r="24" class="node"/><circle cx="950" cy="425" r="24" class="node"/><circle cx="1055" cy="485" r="24" class="node"/>
+  <text x="895" y="545" text-anchor="middle" class="zh small">蓝色长程边缩短不同区域之间的距离</text>
+</svg>

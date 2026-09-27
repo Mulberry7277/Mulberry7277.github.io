@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
+  <title id="title">谱聚类与社区分割</title>
+  <desc id="desc">两个内部连接密集的社区由少量跨社区边连接，拉普拉斯特征向量提供分割线索。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:23px;font-weight:700}.small{font-size:18px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#cbd5e1;stroke-width:4;stroke-linecap:round}.bridge{stroke:#e07a5f;stroke-width:6;stroke-linecap:round}.left{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.right{fill:#dcfce7;stroke:#16a34a;stroke-width:2}.axis{stroke:#64748b;stroke-width:3}.dot1{fill:#2563eb}.dot2{fill:#16a34a}</style></defs>
+  <rect width="1400" height="650" rx="28" fill="#f8fafc"/><text x="700" y="55" text-anchor="middle" class="zh title">拉普拉斯特征向量可以把社区“拉开”</text>
+  <rect x="35" y="95" width="650" height="480" rx="22" class="panel"/><text x="360" y="140" text-anchor="middle" class="zh label">原网络：两个密集社区</text>
+  <line x1="125" y1="245" x2="220" y2="195" class="edge"/><line x1="125" y1="245" x2="220" y2="350" class="edge"/><line x1="220" y1="195" x2="220" y2="350" class="edge"/><line x1="220" y1="195" x2="320" y2="270" class="edge"/><line x1="220" y1="350" x2="320" y2="270" class="edge"/>
+  <line x1="430" y1="270" x2="530" y2="195" class="edge"/><line x1="430" y1="270" x2="530" y2="350" class="edge"/><line x1="530" y1="195" x2="530" y2="350" class="edge"/><line x1="530" y1="195" x2="625" y2="245" class="edge"/><line x1="530" y1="350" x2="625" y2="245" class="edge"/>
+  <line x1="320" y1="270" x2="430" y2="270" class="bridge"/>
+  <circle cx="125" cy="245" r="18" class="left"/><circle cx="220" cy="195" r="18" class="left"/><circle cx="220" cy="350" r="18" class="left"/><circle cx="320" cy="270" r="18" class="left"/><circle cx="430" cy="270" r="18" class="right"/><circle cx="530" cy="195" r="18" class="right"/><circle cx="530" cy="350" r="18" class="right"/><circle cx="625" cy="245" r="18" class="right"/>
+  <text x="360" y="495" text-anchor="middle" class="zh small">少量跨社区边（红色）</text>
+  <rect x="735" y="95" width="630" height="480" rx="22" class="panel"/><text x="1050" y="140" text-anchor="middle" class="zh label">第二特征向量的取值</text>
+  <line x1="820" y1="430" x2="1285" y2="430" class="axis"/><line x1="820" y1="190" x2="820" y2="430" class="axis"/>
+  <circle cx="875" cy="275" r="9" class="dot1"/><circle cx="930" cy="300" r="9" class="dot1"/><circle cx="985" cy="255" r="9" class="dot1"/><circle cx="1040" cy="290" r="9" class="dot1"/>
+  <circle cx="1100" cy="350" r="9" class="dot2"/><circle cx="1155" cy="330" r="9" class="dot2"/><circle cx="1210" cy="370" r="9" class="dot2"/><circle cx="1260" cy="345" r="9" class="dot2"/>
+  <line x1="1070" y1="190" x2="1070" y2="430" stroke="#e07a5f" stroke-width="4" stroke-dasharray="10 8"/>
+  <text x="950" y="485" text-anchor="middle" class="zh small">左侧取值偏负，右侧取值偏正，可据此切分</text>
+</svg>

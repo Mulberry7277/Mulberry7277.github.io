@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">常见图的类型</title>
+  <desc id="desc">比较简单图、多重图、有向图和带权图。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 Z" fill="#64748b"/></marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 17px; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .edge { stroke: #64748b; stroke-width: 4; fill: none; }
+      .node { fill: #fde68a; stroke: #c58b29; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="600" y="52" text-anchor="middle" class="zh title">常见的图类型</text>
+
+  <rect x="45" y="90" width="530" height="245" rx="20" class="panel"/>
+  <text x="310" y="132" text-anchor="middle" class="zh label">简单图</text>
+  <text x="310" y="160" text-anchor="middle" class="zh small">无自环，同一对顶点至多一条边</text>
+  <line x1="180" y1="245" x2="310" y2="200" class="edge"/><line x1="310" y1="200" x2="440" y2="245" class="edge"/><line x1="180" y1="245" x2="440" y2="245" class="edge"/>
+  <circle cx="180" cy="245" r="22" class="node"/><circle cx="310" cy="200" r="22" class="node"/><circle cx="440" cy="245" r="22" class="node"/>
+
+  <rect x="625" y="90" width="530" height="245" rx="20" class="panel"/>
+  <text x="890" y="132" text-anchor="middle" class="zh label">多重图</text>
+  <text x="890" y="160" text-anchor="middle" class="zh small">同一对顶点可以有多条平行边</text>
+  <path d="M760 245 Q890 175 1020 245" class="edge"/><path d="M760 265 Q890 195 1020 265" class="edge"/>
+  <circle cx="760" cy="255" r="22" class="node"/><circle cx="1020" cy="255" r="22" class="node"/>
+
+  <rect x="45" y="385" width="530" height="245" rx="20" class="panel"/>
+  <text x="310" y="427" text-anchor="middle" class="zh label">有向图</text>
+  <text x="310" y="455" text-anchor="middle" class="zh small">边有方向，用箭头表示</text>
+  <line x1="180" y1="540" x2="310" y2="495" class="edge" marker-end="url(#arrow)"/><line x1="310" y1="495" x2="440" y2="540" class="edge" marker-end="url(#arrow)"/>
+  <circle cx="180" cy="540" r="22" class="node"/><circle cx="310" cy="495" r="22" class="node"/><circle cx="440" cy="540" r="22" class="node"/>
+
+  <rect x="625" y="385" width="530" height="245" rx="20" class="panel"/>
+  <text x="890" y="427" text-anchor="middle" class="zh label">带权图</text>
+  <text x="890" y="455" text-anchor="middle" class="zh small">边或顶点带有数值标签</text>
+  <line x1="760" y1="540" x2="890" y2="495" class="edge"/><line x1="890" y1="495" x2="1020" y2="540" class="edge"/>
+  <circle cx="760" cy="540" r="22" class="node"/><circle cx="890" cy="495" r="22" class="node"/><circle cx="1020" cy="540" r="22" class="node"/>
+  <text x="820" y="500" class="zh small">3.2</text><text x="950" y="500" class="zh small">1.7</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">单射、满射与双射</title>
+  <desc id="desc">用三组映射比较单射、满射和双射的定义。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 17px; }
+      .set { fill: #fff; stroke: #8a9aae; stroke-width: 2; }
+      .dot-a { fill: #f28b82; }
+      .dot-b { fill: #78a9ed; }
+      .ok { fill: #dcfce7; stroke: #63a276; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="zh title">三种常见映射类型</text>
+
+  <rect x="35" y="90" width="350" height="375" rx="20" class="ok"/>
+  <text x="210" y="135" text-anchor="middle" class="zh label">单射 injection</text>
+  <text x="210" y="165" text-anchor="middle" class="zh small">不同输入不会得到同一个输出</text>
+  <ellipse cx="125" cy="290" rx="65" ry="105" class="set"/>
+  <ellipse cx="295" cy="290" rx="65" ry="125" class="set"/>
+  <circle cx="125" cy="235" r="10" class="dot-a"/><circle cx="125" cy="290" r="10" class="dot-a"/><circle cx="125" cy="345" r="10" class="dot-a"/>
+  <circle cx="295" cy="210" r="10" class="dot-b"/><circle cx="295" cy="265" r="10" class="dot-b"/><circle cx="295" cy="320" r="10" class="dot-b"/><circle cx="295" cy="375" r="10" class="dot-b"/>
+  <path d="M135 235 L285 210 M135 290 L285 265 M135 345 L285 320" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="425" y="90" width="350" height="375" rx="20" class="ok"/>
+  <text x="600" y="135" text-anchor="middle" class="zh label">满射 surjection</text>
+  <text x="600" y="165" text-anchor="middle" class="zh small">陪域中的每个元素都被取到</text>
+  <ellipse cx="510" cy="290" rx="65" ry="125" class="set"/>
+  <ellipse cx="680" cy="290" rx="65" ry="105" class="set"/>
+  <circle cx="510" cy="210" r="10" class="dot-a"/><circle cx="510" cy="265" r="10" class="dot-a"/><circle cx="510" cy="320" r="10" class="dot-a"/><circle cx="510" cy="375" r="10" class="dot-a"/>
+  <circle cx="680" cy="235" r="10" class="dot-b"/><circle cx="680" cy="290" r="10" class="dot-b"/><circle cx="680" cy="345" r="10" class="dot-b"/>
+  <path d="M520 210 L670 235 M520 265 L670 290 M520 320 L670 290 M520 375 L670 345" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="815" y="90" width="350" height="375" rx="20" class="ok"/>
+  <text x="990" y="135" text-anchor="middle" class="zh label">双射 bijection</text>
+  <text x="990" y="165" text-anchor="middle" class="zh small">既是单射，又是满射</text>
+  <ellipse cx="900" cy="290" rx="65" ry="105" class="set"/>
+  <ellipse cx="1070" cy="290" rx="65" ry="105" class="set"/>
+  <circle cx="900" cy="235" r="10" class="dot-a"/><circle cx="900" cy="290" r="10" class="dot-a"/><circle cx="900" cy="345" r="10" class="dot-a"/>
+  <circle cx="1070" cy="235" r="10" class="dot-b"/><circle cx="1070" cy="290" r="10" class="dot-b"/><circle cx="1070" cy="345" r="10" class="dot-b"/>
+  <path d="M910 235 L1060 235 M910 290 L1060 290 M910 345 L1060 345" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

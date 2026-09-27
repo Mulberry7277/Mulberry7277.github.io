@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">从图中抽取生成树</title>
+  <desc id="desc">左侧含有环的连通图通过删除冗余边变成右侧生成树，所有顶点都被保留。</desc>
+  <defs>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 32px; font-weight: 700; }
+      .label { font-size: 26px; font-weight: 700; }
+      .small { font-size: 20px; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .edge { stroke: #94a3b8; stroke-width: 6; stroke-linecap: round; }
+      .keep { stroke: #e07a5f; stroke-width: 9; stroke-linecap: round; }
+      .drop { stroke: #cbd5e1; stroke-width: 6; stroke-dasharray: 12 10; }
+      .node { fill: #dbeafe; stroke: #3b82f6; stroke-width: 3; }
+      .arrow { fill: #4f8edb; }
+    </style>
+  </defs>
+  <rect width="1200" height="600" rx="28" fill="#f8fafc"/>
+  <text x="600" y="54" text-anchor="middle" class="zh title">生成树：保留全部顶点，删除造成环的冗余边</text>
+  <rect x="42" y="90" width="480" height="440" rx="22" class="panel"/>
+  <text x="282" y="138" text-anchor="middle" class="zh label">原图 G</text>
+  <line x1="155" y1="300" x2="270" y2="190" class="edge"/><line x1="270" y1="190" x2="410" y2="250" class="edge"/><line x1="410" y1="250" x2="365" y2="410" class="edge"/><line x1="365" y1="410" x2="190" y2="420" class="edge"/><line x1="190" y1="420" x2="155" y2="300" class="edge"/><line x1="270" y1="190" x2="365" y2="410" class="edge"/>
+  <circle cx="155" cy="300" r="25" class="node"/><circle cx="270" cy="190" r="25" class="node"/><circle cx="410" cy="250" r="25" class="node"/><circle cx="365" cy="410" r="25" class="node"/><circle cx="190" cy="420" r="25" class="node"/>
+  <text x="282" y="490" text-anchor="middle" class="zh small">6 条边、5 个顶点，含有多个圈</text>
+  <path d="M555 310 L635 310" stroke="#4f8edb" stroke-width="8" stroke-linecap="round"/><polygon points="660,310 625,288 625,332" class="arrow"/>
+  <text x="596" y="278" text-anchor="middle" class="zh small">删去冗余边</text>
+  <rect x="678" y="90" width="480" height="440" rx="22" class="panel"/>
+  <text x="918" y="138" text-anchor="middle" class="zh label">生成树 T</text>
+  <line x1="790" y1="300" x2="905" y2="190" class="keep"/><line x1="905" y1="190" x2="1045" y2="250" class="keep"/><line x1="1045" y1="250" x2="1000" y2="410" class="keep"/><line x1="1000" y1="410" x2="825" y2="420" class="keep"/>
+  <line x1="825" y1="420" x2="790" y2="300" class="drop"/><line x1="905" y1="190" x2="1000" y2="410" class="drop"/>
+  <circle cx="790" cy="300" r="25" class="node"/><circle cx="905" cy="190" r="25" class="node"/><circle cx="1045" cy="250" r="25" class="node"/><circle cx="1000" cy="410" r="25" class="node"/><circle cx="825" cy="420" r="25" class="node"/>
+  <text x="918" y="490" text-anchor="middle" class="zh small">全部顶点仍在，4 条边且连通、无圈</text>
+</svg>

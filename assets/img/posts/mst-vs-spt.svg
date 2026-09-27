@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">最短路径树与最小生成树</title>
+  <desc id="desc">同一张三顶点带权图中，从 s 出发的最短路径树选两条权重二的边；最小生成树选权重二和一的边。</desc>
+  <defs><style>
+    .zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#cbd5e1;stroke-width:6;stroke-linecap:round}.selected{stroke:#e07a5f;stroke-width:10;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.weight{font-family:"Segoe UI",sans-serif;font-size:23px;font-weight:700;fill:#334155}.box{fill:#fff7ed;stroke:#fdba74;stroke-width:2}</style>
+  </defs>
+  <rect width="1200" height="640" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">两种“最优树”优化的对象不同</text>
+  <rect x="45" y="95" width="525" height="480" rx="22" class="panel"/><text x="307" y="140" text-anchor="middle" class="zh label">从 s 出发的最短路径树</text>
+  <line x1="305" y1="200" x2="170" y2="410" class="edge"/><line x1="305" y1="200" x2="440" y2="410" class="edge"/><line x1="170" y1="410" x2="440" y2="410" class="edge"/>
+  <text x="215" y="300" class="weight">2</text><text x="380" y="300" class="weight">2</text><text x="305" y="397" class="weight">1</text>
+  <line x1="305" y1="200" x2="170" y2="410" class="selected"/><line x1="305" y1="200" x2="440" y2="410" class="selected"/>
+  <circle cx="305" cy="200" r="29" class="node"/><circle cx="170" cy="410" r="29" class="node"/><circle cx="440" cy="410" r="29" class="node"/>
+  <text x="305" y="209" text-anchor="middle" class="zh small">s</text><text x="170" y="419" text-anchor="middle" class="zh small">a</text><text x="440" y="419" text-anchor="middle" class="zh small">b</text>
+  <text x="307" y="510" text-anchor="middle" class="zh small">到 a、b 的距离均为 2；树总权重 4</text>
+  <rect x="630" y="95" width="525" height="480" rx="22" class="panel"/><text x="892" y="140" text-anchor="middle" class="zh label">最小生成树</text>
+  <line x1="890" y1="200" x2="755" y2="410" class="edge"/><line x1="890" y1="200" x2="1025" y2="410" class="edge"/><line x1="755" y1="410" x2="1025" y2="410" class="edge"/>
+  <text x="800" y="300" class="weight">2</text><text x="965" y="300" class="weight">2</text><text x="890" y="397" class="weight">1</text>
+  <line x1="890" y1="200" x2="755" y2="410" class="selected"/><line x1="755" y1="410" x2="1025" y2="410" class="selected"/>
+  <circle cx="890" cy="200" r="29" class="node"/><circle cx="755" cy="410" r="29" class="node"/><circle cx="1025" cy="410" r="29" class="node"/>
+  <text x="890" y="209" text-anchor="middle" class="zh small">s</text><text x="755" y="419" text-anchor="middle" class="zh small">a</text><text x="1025" y="419" text-anchor="middle" class="zh small">b</text>
+  <text x="892" y="510" text-anchor="middle" class="zh small">树总权重 3；树上 s 到 b 的距离为 3</text>
+</svg>

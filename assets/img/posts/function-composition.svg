@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">函数复合与逆映射</title>
+  <desc id="desc">展示 A 经过 f 到 B，再经过 g 到 C，复合函数为 g∘f。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 26px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .set { fill: #fff; stroke: #8497ad; stroke-width: 3; }
+      .dot-a { fill: #f28b82; }
+      .dot-b { fill: #f6c453; }
+      .dot-c { fill: #78a9ed; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="#f8fafc"/>
+  <text x="600" y="52" text-anchor="middle" class="zh title">函数复合：把两个映射首尾相接</text>
+
+  <ellipse cx="170" cy="270" rx="100" ry="150" class="set" fill="#fff1f2"/>
+  <ellipse cx="600" cy="270" rx="100" ry="150" class="set" fill="#fffbeb"/>
+  <ellipse cx="1030" cy="270" rx="100" ry="150" class="set" fill="#eff6ff"/>
+  <text x="170" y="115" text-anchor="middle" class="zh label">A</text>
+  <text x="600" y="115" text-anchor="middle" class="zh label">B</text>
+  <text x="1030" y="115" text-anchor="middle" class="zh label">C</text>
+  <circle cx="170" cy="220" r="15" class="dot-a"/><circle cx="170" cy="320" r="15" class="dot-a"/>
+  <circle cx="600" cy="220" r="15" class="dot-b"/><circle cx="600" cy="320" r="15" class="dot-b"/>
+  <circle cx="1030" cy="220" r="15" class="dot-c"/><circle cx="1030" cy="320" r="15" class="dot-c"/>
+  <path d="M190 220 C320 165 435 165 580 220" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M190 320 C320 375 435 375 580 320" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M620 220 C750 165 865 165 1010 220" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M620 320 C750 375 865 375 1010 320" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="385" y="155" text-anchor="middle" class="zh label">f</text>
+  <text x="815" y="155" text-anchor="middle" class="zh label">g</text>
+  <text x="600" y="455" text-anchor="middle" class="zh label">g∘f : A→C，(g∘f)(a)=g(f(a))</text>
+  <text x="600" y="490" text-anchor="middle" class="zh small">必须先应用 f，再应用 g；一般 g∘f ≠ f∘g</text>
+</svg>

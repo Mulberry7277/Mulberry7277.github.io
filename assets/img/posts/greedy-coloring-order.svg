@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">贪心着色依赖顶点顺序</title>
+  <desc id="desc">同一条四顶点路径按自然顺序贪心着色使用两色，另一种顺序使用三色。</desc>
+  <defs><style>
+    .zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#94a3b8;stroke-width:6}.n1{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.n2{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.n3{fill:#fce7f3;stroke:#db2777;stroke-width:3}
+  </style></defs>
+  <rect width="1200" height="620" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">贪心算法的颜色数取决于顶点处理顺序</text>
+  <rect x="45" y="95" width="520" height="440" rx="22" class="panel"/><text x="305" y="140" text-anchor="middle" class="zh label">顺序 v₁ → v₂ → v₃ → v₄</text>
+  <line x1="130" y1="315" x2="215" y2="315" class="edge"/><line x1="215" y1="315" x2="300" y2="315" class="edge"/><line x1="300" y1="315" x2="385" y2="315" class="edge"/>
+  <circle cx="130" cy="315" r="27" class="n1"/><circle cx="215" cy="315" r="27" class="n2"/><circle cx="300" cy="315" r="27" class="n1"/><circle cx="385" cy="315" r="27" class="n2"/>
+  <text x="130" y="323" text-anchor="middle" class="zh small">1</text><text x="215" y="323" text-anchor="middle" class="zh small">2</text><text x="300" y="323" text-anchor="middle" class="zh small">3</text><text x="385" y="323" text-anchor="middle" class="zh small">4</text><text x="305" y="465" text-anchor="middle" class="zh small">结果：2 种颜色，达到最优</text>
+  <rect x="635" y="95" width="520" height="440" rx="22" class="panel"/><text x="895" y="140" text-anchor="middle" class="zh label">顺序 v₁ → v₄ → v₂ → v₃</text>
+  <line x1="720" y1="315" x2="805" y2="315" class="edge"/><line x1="805" y1="315" x2="890" y2="315" class="edge"/><line x1="890" y1="315" x2="975" y2="315" class="edge"/>
+  <circle cx="720" cy="315" r="27" class="n1"/><circle cx="805" cy="315" r="27" class="n2"/><circle cx="890" cy="315" r="27" class="n3"/><circle cx="975" cy="315" r="27" class="n1"/>
+  <text x="720" y="323" text-anchor="middle" class="zh small">1</text><text x="805" y="323" text-anchor="middle" class="zh small">4</text><text x="890" y="323" text-anchor="middle" class="zh small">2</text><text x="975" y="323" text-anchor="middle" class="zh small">3</text><text x="895" y="465" text-anchor="middle" class="zh small">结果：3 种颜色，但色数仍是 2</text>
+</svg>

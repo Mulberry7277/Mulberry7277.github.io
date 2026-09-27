@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">平面图的欧拉公式与外部面</title>
+  <desc id="desc">一个四顶点五边的平面图被分成两个有界面和一个外部面，满足四减五加三等于二。</desc>
+  <defs><style>
+    .zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:32px;font-weight:700}.label{font-size:25px;font-weight:700}.small{font-size:20px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#526b88;stroke-width:6;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.f1{fill:#dbeafe}.f2{fill:#fef3c7}.outside{fill:#f1f5f9}.box{fill:#fff7ed;stroke:#fdba74;stroke-width:2}
+  </style></defs>
+  <rect width="1200" height="620" rx="28" class="outside"/>
+  <text x="600" y="55" text-anchor="middle" class="zh title">欧拉公式：顶点数 − 边数 + 面数 = 2</text>
+  <rect x="55" y="95" width="715" height="445" rx="22" class="panel"/>
+  <polygon points="230,190 615,190 615,440" class="f1"/>
+  <polygon points="230,190 615,440 230,440" class="f2"/>
+  <line x1="230" y1="190" x2="615" y2="190" class="edge"/><line x1="615" y1="190" x2="615" y2="440" class="edge"/><line x1="615" y1="440" x2="230" y2="440" class="edge"/><line x1="230" y1="440" x2="230" y2="190" class="edge"/><line x1="230" y1="190" x2="615" y2="440" class="edge"/>
+  <circle cx="230" cy="190" r="25" class="node"/><circle cx="615" cy="190" r="25" class="node"/><circle cx="615" cy="440" r="25" class="node"/><circle cx="230" cy="440" r="25" class="node"/>
+  <text x="230" y="198" text-anchor="middle" class="zh small">A</text><text x="615" y="198" text-anchor="middle" class="zh small">B</text><text x="615" y="448" text-anchor="middle" class="zh small">C</text><text x="230" y="448" text-anchor="middle" class="zh small">D</text>
+  <text x="495" y="275" text-anchor="middle" class="zh label">面 1</text><text x="350" y="385" text-anchor="middle" class="zh label">面 2</text>
+  <text x="420" y="505" text-anchor="middle" class="zh small">图形周围的区域是面 3（外部面）</text>
+  <rect x="815" y="135" width="325" height="325" rx="22" class="box"/>
+  <text x="977" y="195" text-anchor="middle" class="zh label">本例计数</text>
+  <text x="977" y="255" text-anchor="middle" class="zh small">顶点 V = 4</text>
+  <text x="977" y="300" text-anchor="middle" class="zh small">边 E = 5</text>
+  <text x="977" y="345" text-anchor="middle" class="zh small">面 F = 3</text>
+  <text x="977" y="405" text-anchor="middle" class="zh label">4 − 5 + 3 = 2</text>
+</svg>

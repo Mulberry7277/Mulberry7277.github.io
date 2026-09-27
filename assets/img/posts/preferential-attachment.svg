@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">优先连接形成 hub</title>
+  <desc id="desc">随着新顶点加入，它们更倾向连接已有高度较大的中心顶点，逐步形成 hub。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#94a3b8;stroke-width:5;stroke-linecap:round}.new{stroke:#4f8edb;stroke-width:4;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:2}.hub{fill:#fee2e2;stroke:#dc2626;stroke-width:4}.step{fill:#fff7ed;stroke:#fdba74;stroke-width:2}</style></defs>
+  <rect width="1200" height="650" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">优先连接：已有连接越多，越容易继续获得连接</text>
+  <rect x="40" y="95" width="760" height="480" rx="22" class="panel"/><text x="420" y="140" text-anchor="middle" class="zh label">网络随时间增长</text>
+  <line x1="410" y1="285" x2="220" y2="200" class="edge"/><line x1="410" y1="285" x2="210" y2="410" class="edge"/><line x1="410" y1="285" x2="610" y2="200" class="edge"/><line x1="410" y1="285" x2="640" y2="410" class="edge"/><line x1="220" y1="200" x2="210" y2="410" class="edge"/><line x1="610" y1="200" x2="640" y2="410" class="edge"/>
+  <line x1="410" y1="285" x2="115" y2="285" class="new"/><line x1="410" y1="285" x2="705" y2="285" class="new"/><line x1="410" y1="285" x2="410" y2="480" class="new"/>
+  <circle cx="410" cy="285" r="43" class="hub"/><circle cx="220" cy="200" r="22" class="node"/><circle cx="210" cy="410" r="22" class="node"/><circle cx="610" cy="200" r="22" class="node"/><circle cx="640" cy="410" r="22" class="node"/><circle cx="115" cy="285" r="18" class="node"/><circle cx="705" cy="285" r="18" class="node"/><circle cx="410" cy="480" r="18" class="node"/>
+  <text x="410" y="294" text-anchor="middle" class="zh small">hub</text><text x="420" y="540" text-anchor="middle" class="zh small">新顶点用蓝色边加入；多数新边指向已有 hub</text>
+  <rect x="845" y="95" width="315" height="480" rx="22" class="panel"/><text x="1002" y="140" text-anchor="middle" class="zh label">机制</text>
+  <rect x="885" y="190" width="235" height="80" rx="14" class="step"/><text x="1002" y="224" text-anchor="middle" class="zh small">增长</text><text x="1002" y="252" text-anchor="middle" class="zh small">不断加入新顶点</text>
+  <rect x="885" y="315" width="235" height="105" rx="14" class="step"/><text x="1002" y="350" text-anchor="middle" class="zh small">优先连接</text><text x="1002" y="380" text-anchor="middle" class="zh small">概率与旧度数成正比</text>
+  <text x="1002" y="490" text-anchor="middle" class="zh small">结果：少数高阶 hub</text>
+</svg>

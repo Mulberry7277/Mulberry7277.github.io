@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">可数集合的枚举</title>
+  <desc id="desc">展示自然数如何枚举整数，以及有理数可以按网格对角线逐步枚举。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 18px; }
+      .cell { fill: #fff; stroke: #91a1b5; stroke-width: 2; }
+      .path { fill: none; stroke: #e07a5f; stroke-width: 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="560" rx="28" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="zh title">可数：可以安排成 1,2,3,… 的顺序</text>
+
+  <rect x="45" y="90" width="500" height="410" rx="22" fill="#fff7ed" stroke="#e2b36d" stroke-width="2"/>
+  <text x="295" y="135" text-anchor="middle" class="zh label">整数 ℤ 的枚举</text>
+  <text x="100" y="205" class="zh label">ℕ:</text>
+  <text x="100" y="255" class="zh label">0</text><text x="175" y="255" class="zh label">1</text><text x="250" y="255" class="zh label">2</text><text x="325" y="255" class="zh label">3</text><text x="400" y="255" class="zh label">4</text><text x="475" y="255" class="zh label">…</text>
+  <text x="100" y="375" class="zh label">ℤ:</text>
+  <text x="100" y="425" class="zh label">0</text><text x="165" y="425" class="zh label">1</text><text x="230" y="425" class="zh label">−1</text><text x="310" y="425" class="zh label">2</text><text x="375" y="425" class="zh label">−2</text><text x="455" y="425" class="zh label">…</text>
+  <path d="M100 275 C125 320 145 365 165 405 M175 275 C195 320 215 365 230 405 M250 275 C270 320 290 365 310 405 M325 275 C345 320 360 365 375 405" class="path"/>
+  <text x="295" y="480" text-anchor="middle" class="zh small">交替列出正数和负数即可覆盖所有整数</text>
+
+  <rect x="590" y="90" width="565" height="410" rx="22" fill="#eff6ff" stroke="#8aa9d4" stroke-width="2"/>
+  <text x="872" y="135" text-anchor="middle" class="zh label">有理数 ℚ 的网格枚举</text>
+  <text x="655" y="190" class="zh small">分子 p</text>
+  <text x="1080" y="450" class="zh small">分母 q</text>
+  <g>
+    <rect x="680" y="210" width="78" height="55" class="cell"/><rect x="758" y="210" width="78" height="55" class="cell"/><rect x="836" y="210" width="78" height="55" class="cell"/><rect x="914" y="210" width="78" height="55" class="cell"/>
+    <rect x="680" y="265" width="78" height="55" class="cell"/><rect x="758" y="265" width="78" height="55" class="cell"/><rect x="836" y="265" width="78" height="55" class="cell"/><rect x="914" y="265" width="78" height="55" class="cell"/>
+    <rect x="680" y="320" width="78" height="55" class="cell"/><rect x="758" y="320" width="78" height="55" class="cell"/><rect x="836" y="320" width="78" height="55" class="cell"/><rect x="914" y="320" width="78" height="55" class="cell"/>
+    <rect x="680" y="375" width="78" height="55" class="cell"/><rect x="758" y="375" width="78" height="55" class="cell"/><rect x="836" y="375" width="78" height="55" class="cell"/><rect x="914" y="375" width="78" height="55" class="cell"/>
+  </g>
+  <path d="M695 225 L775 280 L855 335 L935 390 M695 280 L775 335 L855 390 M695 335 L775 390 M695 390" class="path"/>
+  <text x="875" y="480" text-anchor="middle" class="zh small">按对角线访问分数 p/q，再去掉重复表示</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">小世界网络的重连</title>
+  <desc id="desc">规则环形网络加入少量远距离捷径后，局部团簇仍然保留，但平均路径缩短。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:19px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#94a3b8;stroke-width:5;stroke-linecap:round}.long{stroke:#e07a5f;stroke-width:7;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:2}</style></defs>
+  <rect width="1200" height="650" rx="28" fill="#f8fafc"/><text x="600" y="55" text-anchor="middle" class="zh title">少量长程连接，让网络同时拥有团簇与捷径</text>
+  <rect x="40" y="95" width="525" height="480" rx="22" class="panel"/><text x="302" y="140" text-anchor="middle" class="zh label">规则环形网络：β = 0</text>
+  <circle cx="302" cy="330" r="155" fill="none" class="edge"/>
+  <path d="M302 175 L411 219 L457 330 L411 441 L302 485 L193 441 L147 330 L193 219 Z" fill="none" class="edge"/>
+  <circle cx="302" cy="175" r="14" class="node"/><circle cx="411" cy="219" r="14" class="node"/><circle cx="457" cy="330" r="14" class="node"/><circle cx="411" cy="441" r="14" class="node"/><circle cx="302" cy="485" r="14" class="node"/><circle cx="193" cy="441" r="14" class="node"/><circle cx="147" cy="330" r="14" class="node"/><circle cx="193" cy="219" r="14" class="node"/>
+  <text x="302" y="540" text-anchor="middle" class="zh small">局部聚类高，但远距离路径较长</text>
+  <rect x="635" y="95" width="525" height="480" rx="22" class="panel"/><text x="897" y="140" text-anchor="middle" class="zh label">少量重连：β 较小</text>
+  <circle cx="897" cy="330" r="155" fill="none" class="edge"/>
+  <path d="M897 175 L1006 219 L1052 330 L1006 441 L897 485 L788 441 L742 330 L788 219 Z" fill="none" class="edge"/>
+  <line x1="897" y1="175" x2="1052" y2="330" class="long"/><line x1="742" y1="330" x2="1006" y2="441" class="long"/>
+  <circle cx="897" cy="175" r="14" class="node"/><circle cx="1006" cy="219" r="14" class="node"/><circle cx="1052" cy="330" r="14" class="node"/><circle cx="1006" cy="441" r="14" class="node"/><circle cx="897" cy="485" r="14" class="node"/><circle cx="788" cy="441" r="14" class="node"/><circle cx="742" cy="330" r="14" class="node"/><circle cx="788" cy="219" r="14" class="node"/>
+  <text x="897" y="540" text-anchor="middle" class="zh small">红色捷径缩短平均路径，局部边仍保留</text>
+</svg>

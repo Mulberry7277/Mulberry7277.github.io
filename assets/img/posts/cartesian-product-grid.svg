@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">笛卡尔积的网格表示</title>
+  <desc id="desc">展示 A={1,2} 与 B={x,y,z} 的笛卡尔积和六个有序对。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#fdf2f8"/>
+    </linearGradient>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 24px; font-weight: 700; }
+      .cell { fill: #ffffff; stroke: #8aa0ba; stroke-width: 2; }
+      .axis { stroke: #64748b; stroke-width: 3; }
+      .pair { font-size: 22px; font-weight: 600; }
+      .small { font-size: 19px; }
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" class="zh title">笛卡尔积：把两个集合中的元素按顺序配对</text>
+
+  <text x="95" y="145" class="zh label">A={1,2}</text>
+  <text x="95" y="190" class="zh label">B={x,y,z}</text>
+  <text x="95" y="255" class="zh small">第一项来自 A，第二项来自 B</text>
+  <text x="95" y="295" class="zh small">所以每个格子对应一个有序对</text>
+
+  <line x1="460" y1="155" x2="1060" y2="155" class="axis"/>
+  <line x1="460" y1="155" x2="460" y2="570" class="axis"/>
+  <text x="760" y="105" text-anchor="middle" class="zh label">第二项：来自 B</text>
+  <text x="400" y="365" text-anchor="middle" class="zh label" transform="rotate(-90 400 365)">第一项：来自 A</text>
+
+  <text x="600" y="145" text-anchor="middle" class="zh label">x</text>
+  <text x="800" y="145" text-anchor="middle" class="zh label">y</text>
+  <text x="1000" y="145" text-anchor="middle" class="zh label">z</text>
+  <text x="435" y="260" text-anchor="middle" class="zh label">1</text>
+  <text x="435" y="455" text-anchor="middle" class="zh label">2</text>
+
+  <rect x="500" y="190" width="200" height="150" class="cell" fill="#fee2e2"/>
+  <rect x="700" y="190" width="200" height="150" class="cell" fill="#fee2e2"/>
+  <rect x="900" y="190" width="200" height="150" class="cell" fill="#fee2e2"/>
+  <rect x="500" y="380" width="200" height="150" class="cell" fill="#dbeafe"/>
+  <rect x="700" y="380" width="200" height="150" class="cell" fill="#dbeafe"/>
+  <rect x="900" y="380" width="200" height="150" class="cell" fill="#dbeafe"/>
+
+  <text x="600" y="278" text-anchor="middle" class="zh pair">(1,x)</text>
+  <text x="800" y="278" text-anchor="middle" class="zh pair">(1,y)</text>
+  <text x="1000" y="278" text-anchor="middle" class="zh pair">(1,z)</text>
+  <text x="600" y="468" text-anchor="middle" class="zh pair">(2,x)</text>
+  <text x="800" y="468" text-anchor="middle" class="zh pair">(2,y)</text>
+  <text x="1000" y="468" text-anchor="middle" class="zh pair">(2,z)</text>
+
+  <text x="760" y="610" text-anchor="middle" class="zh small">|A×B|=|A||B|=2×3=6</text>
+</svg>

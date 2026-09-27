@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
+  <title id="title">网络同步与拉普拉斯耦合</title>
+  <desc id="desc">三个通过网络连接的振荡器状态逐渐靠拢，最终达到同步。</desc>
+  <defs><style>.zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:31px;font-weight:700}.label{font-size:23px;font-weight:700}.small{font-size:18px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#94a3b8;stroke-width:5;stroke-linecap:round}.n1{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.n2{fill:#dcfce7;stroke:#16a34a;stroke-width:3}.n3{fill:#fef3c7;stroke:#d97706;stroke-width:3}.phase{stroke:#e07a5f;stroke-width:6;stroke-linecap:round}</style></defs>
+  <rect width="1400" height="650" rx="28" fill="#f8fafc"/><text x="700" y="55" text-anchor="middle" class="zh title">相邻节点交换差异信息，状态可以逐渐同步</text>
+  <rect x="35" y="95" width="430" height="480" rx="22" class="panel"/><text x="250" y="140" text-anchor="middle" class="zh label">t = 0：状态不同</text>
+  <line x1="170" y1="330" x2="330" y2="220" class="edge"/><line x1="170" y1="330" x2="330" y2="440" class="edge"/><line x1="330" y1="220" x2="330" y2="440" class="edge"/>
+  <circle cx="170" cy="330" r="34" class="n1"/><circle cx="330" cy="220" r="34" class="n2"/><circle cx="330" cy="440" r="34" class="n3"/>
+  <line x1="170" y1="330" x2="200" y2="305" class="phase"/><line x1="330" y1="220" x2="360" y2="220" class="phase"/><line x1="330" y1="440" x2="315" y2="410" class="phase"/>
+  <text x="250" y="520" text-anchor="middle" class="zh small">三个节点的相位方向不同</text>
+  <rect x="485" y="95" width="430" height="480" rx="22" class="panel"/><text x="700" y="140" text-anchor="middle" class="zh label">t = 1：差异减小</text>
+  <line x1="620" y1="330" x2="780" y2="220" class="edge"/><line x1="620" y1="330" x2="780" y2="440" class="edge"/><line x1="780" y1="220" x2="780" y2="440" class="edge"/>
+  <circle cx="620" cy="330" r="34" class="n1"/><circle cx="780" cy="220" r="34" class="n2"/><circle cx="780" cy="440" r="34" class="n3"/>
+  <line x1="620" y1="330" x2="650" y2="315" class="phase"/><line x1="780" y1="220" x2="810" y2="215" class="phase"/><line x1="780" y1="440" x2="765" y2="410" class="phase"/>
+  <text x="700" y="520" text-anchor="middle" class="zh small">耦合项把相邻状态差异传递出去</text>
+  <rect x="935" y="95" width="430" height="480" rx="22" class="panel"/><text x="1150" y="140" text-anchor="middle" class="zh label">t → ∞：同步状态</text>
+  <line x1="1070" y1="330" x2="1230" y2="220" class="edge"/><line x1="1070" y1="330" x2="1230" y2="440" class="edge"/><line x1="1230" y1="220" x2="1230" y2="440" class="edge"/>
+  <circle cx="1070" cy="330" r="34" class="n1"/><circle cx="1230" cy="220" r="34" class="n2"/><circle cx="1230" cy="440" r="34" class="n3"/>
+  <line x1="1070" y1="330" x2="1100" y2="305" class="phase"/><line x1="1230" y1="220" x2="1260" y2="195" class="phase"/><line x1="1230" y1="440" x2="1260" y2="415" class="phase"/>
+  <text x="1150" y="520" text-anchor="middle" class="zh small">相位方向一致，达到同步流形</text>
+</svg>

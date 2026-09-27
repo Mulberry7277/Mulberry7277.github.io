@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">数学证明的基本流程</title>
+  <desc id="desc">从已知条件到结论，并列出直接证明、逆否证明、反证法和分类讨论。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6f9ff"/>
+      <stop offset="1" stop-color="#eef5f2"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5f6f86"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1e293b; }
+      .title { font-size: 28px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 600; }
+      .small { font-size: 18px; }
+      .node { stroke: #8ca1b8; stroke-width: 2; rx: 18; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+  <text x="600" y="55" text-anchor="middle" class="zh title">数学证明的基本路线</text>
+
+  <rect x="70" y="130" width="210" height="92" class="node" fill="#dbeafe"/>
+  <text x="175" y="170" text-anchor="middle" class="zh label">已知条件</text>
+  <text x="175" y="198" text-anchor="middle" class="zh small">假设、定义、前提</text>
+
+  <rect x="345" y="130" width="210" height="92" class="node" fill="#dcfce7"/>
+  <text x="450" y="170" text-anchor="middle" class="zh label">展开定义</text>
+  <text x="450" y="198" text-anchor="middle" class="zh small">把概念写成条件</text>
+
+  <rect x="620" y="130" width="210" height="92" class="node" fill="#fef3c7"/>
+  <text x="725" y="170" text-anchor="middle" class="zh label">逻辑推理</text>
+  <text x="725" y="198" text-anchor="middle" class="zh small">等价变形与推导</text>
+
+  <rect x="895" y="130" width="235" height="92" class="node" fill="#fce7f3"/>
+  <text x="1012" y="170" text-anchor="middle" class="zh label">结论</text>
+  <text x="1012" y="198" text-anchor="middle" class="zh small">命题得到证明</text>
+
+  <path d="M280 176 H335" stroke="#5f6f86" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M555 176 H610" stroke="#5f6f86" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M830 176 H885" stroke="#5f6f86" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="600" y="305" text-anchor="middle" class="zh label">根据命题结构选择证明策略</text>
+  <path d="M725 225 C725 270 205 270 205 342" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M725 225 C725 275 470 275 470 342" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M725 225 C725 275 730 275 730 342" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M725 225 C725 270 1000 270 1000 342" fill="none" stroke="#a0aec0" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="75" y="350" width="260" height="72" class="node" fill="#ffffff"/>
+  <text x="205" y="394" text-anchor="middle" class="zh label">直接证明</text>
+  <rect x="340" y="350" width="260" height="72" class="node" fill="#ffffff"/>
+  <text x="470" y="394" text-anchor="middle" class="zh label">逆否命题</text>
+  <rect x="605" y="350" width="260" height="72" class="node" fill="#ffffff"/>
+  <text x="735" y="394" text-anchor="middle" class="zh label">反证法</text>
+  <rect x="870" y="350" width="260" height="72" class="node" fill="#ffffff"/>
+  <text x="1000" y="394" text-anchor="middle" class="zh label">分类讨论</text>
+
+  <text x="600" y="475" text-anchor="middle" class="zh small" fill="#526274">证明不是例子堆积，而是从条件到结论的可检查推理链</text>
+</svg>

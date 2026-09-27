@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc">
+  <title id="title">有限集与无限集的基数比较</title>
+  <desc id="desc">左侧展示有限集的双射匹配，右侧展示自然数与偶数集合的双射。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 18px; }
+      .set { fill: #fff; stroke: #8394a9; stroke-width: 3; }
+      .a { fill: #fecdd3; stroke: #d66778; stroke-width: 2; }
+      .b { fill: #bfdbfe; stroke: #5e8fd3; stroke-width: 2; }
+      .green { stroke: #5ea675; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="570" rx="28" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="zh title">有限集与无限集：都可以用双射比较大小</text>
+
+  <rect x="45" y="90" width="510" height="420" rx="22" fill="#fff7ed" stroke="#e2b36d" stroke-width="2"/>
+  <text x="300" y="135" text-anchor="middle" class="zh label">有限集：元素可以数完</text>
+  <ellipse cx="155" cy="290" rx="65" ry="145" class="set"/>
+  <ellipse cx="445" cy="290" rx="65" ry="145" class="set"/>
+  <text x="155" y="175" text-anchor="middle" class="zh label">A</text>
+  <text x="445" y="175" text-anchor="middle" class="zh label">{1,2,3}</text>
+  <circle cx="155" cy="235" r="12" class="a"/><circle cx="155" cy="290" r="12" class="a"/><circle cx="155" cy="345" r="12" class="a"/>
+  <circle cx="445" cy="235" r="12" class="b"/><circle cx="445" cy="290" r="12" class="b"/><circle cx="445" cy="345" r="12" class="b"/>
+  <path d="M170 235 H430 M170 290 H430 M170 345 H430" class="green" marker-end="url(#arrow)"/>
+  <text x="300" y="455" text-anchor="middle" class="zh small">|A|=3：每个元素都能一一配对</text>
+
+  <rect x="600" y="90" width="555" height="420" rx="22" fill="#eff6ff" stroke="#8aa9d4" stroke-width="2"/>
+  <text x="878" y="135" text-anchor="middle" class="zh label">无限集：真子集也可能等势</text>
+  <text x="675" y="220" class="zh label">ℕ</text>
+  <text x="675" y="290" class="zh label">0, 1, 2, 3, 4, …</text>
+  <text x="675" y="385" class="zh label">2ℕ</text>
+  <text x="675" y="455" class="zh label">0, 2, 4, 6, 8, …</text>
+  <path d="M890 215 C970 235 970 375 890 385" fill="none" class="green" marker-end="url(#arrow)"/>
+  <text x="1020" y="300" text-anchor="middle" class="zh small">f(n)=2n</text>
+  <text x="878" y="490" text-anchor="middle" class="zh small">ℕ 与 2ℕ 之间存在双射，虽然 2ℕ⊊ℕ</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">欧拉回路与哈密顿回路</title>
+  <desc id="desc">左侧强调每条边恰好一次，右侧强调每个顶点恰好一次。</desc>
+  <defs>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 18px; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .edge { stroke: #a0aec0; stroke-width: 5; stroke-linecap: round; }
+      .hi-a { stroke: #e07a5f; stroke-width: 7; stroke-linecap: round; fill: none; }
+      .hi-b { stroke: #4f8edb; stroke-width: 7; stroke-linecap: round; fill: none; }
+      .node { fill: #fde68a; stroke: #c58b29; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="620" rx="28" fill="#f8fafc"/>
+  <text x="600" y="52" text-anchor="middle" class="zh title">欧拉与哈密顿：到底要求“每条边”还是“每个顶点”</text>
+
+  <rect x="45" y="90" width="530" height="450" rx="22" class="panel"/>
+  <text x="310" y="135" text-anchor="middle" class="zh label">欧拉回路</text>
+  <text x="310" y="165" text-anchor="middle" class="zh small">每条边恰好经过一次，并回到起点</text>
+  <line x1="150" y1="330" x2="280" y2="220" class="edge"/><line x1="280" y1="220" x2="450" y2="300" class="edge"/><line x1="450" y1="300" x2="280" y2="420" class="edge"/><line x1="280" y1="420" x2="150" y2="330" class="edge"/><path d="M150 330 L280 220 L450 300 L280 420 L150 330" class="hi-a"/>
+  <circle cx="150" cy="330" r="24" class="node"/><circle cx="280" cy="220" r="24" class="node"/><circle cx="450" cy="300" r="24" class="node"/><circle cx="280" cy="420" r="24" class="node"/>
+  <text x="310" y="490" text-anchor="middle" class="zh small">关注边：边不能漏，也不能重复</text>
+
+  <rect x="625" y="90" width="530" height="450" rx="22" class="panel"/>
+  <text x="890" y="135" text-anchor="middle" class="zh label">哈密顿回路</text>
+  <text x="890" y="165" text-anchor="middle" class="zh small">每个顶点恰好经过一次，并回到起点</text>
+  <line x1="730" y1="330" x2="860" y2="220" class="edge"/><line x1="860" y1="220" x2="1030" y2="300" class="edge"/><line x1="1030" y1="300" x2="860" y2="420" class="edge"/><line x1="860" y1="420" x2="730" y2="330" class="edge"/><line x1="860" y1="220" x2="860" y2="420" class="edge"/><path d="M730 330 L860 220 L1030 300 L860 420 L730 330" class="hi-b"/>
+  <circle cx="730" cy="330" r="24" class="node"/><circle cx="860" cy="220" r="24" class="node"/><circle cx="1030" cy="300" r="24" class="node"/><circle cx="860" cy="420" r="24" class="node"/>
+  <text x="890" y="490" text-anchor="middle" class="zh small">关注顶点：顶点不能漏，也不能重复</text>
+</svg>

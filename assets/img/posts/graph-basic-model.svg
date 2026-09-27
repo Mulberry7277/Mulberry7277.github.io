@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+  <title id="title">图的基本组成</title>
+  <desc id="desc">展示一个无向图的顶点集、边集、顶点度和图的阶与大小。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .edge { stroke: #718096; stroke-width: 5; stroke-linecap: round; }
+      .node { fill: #fef3c7; stroke: #c58b29; stroke-width: 4; }
+    </style>
+  </defs>
+  <rect width="1100" height="600" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">图 G=(V,E)：顶点与边组成的结构</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">V 是顶点集合，E 是连接顶点的边集合</text>
+
+  <line x1="230" y1="250" x2="430" y2="170" class="edge"/>
+  <line x1="230" y1="250" x2="430" y2="390" class="edge"/>
+  <line x1="430" y1="170" x2="680" y2="170" class="edge"/>
+  <line x1="430" y1="390" x2="680" y2="430" class="edge"/>
+  <line x1="680" y1="170" x2="850" y2="300" class="edge"/>
+  <line x1="680" y1="430" x2="850" y2="300" class="edge"/>
+  <line x1="430" y1="170" x2="680" y2="430" class="edge"/>
+
+  <circle cx="230" cy="250" r="32" class="node"/><circle cx="430" cy="170" r="32" class="node"/><circle cx="430" cy="390" r="32" class="node"/><circle cx="680" cy="170" r="32" class="node"/><circle cx="680" cy="430" r="32" class="node"/><circle cx="850" cy="300" r="32" class="node"/>
+  <text x="230" y="259" text-anchor="middle" class="zh label">v₁</text><text x="430" y="179" text-anchor="middle" class="zh label">v₂</text><text x="430" y="399" text-anchor="middle" class="zh label">v₃</text><text x="680" y="179" text-anchor="middle" class="zh label">v₄</text><text x="680" y="439" text-anchor="middle" class="zh label">v₅</text><text x="850" y="309" text-anchor="middle" class="zh label">v₆</text>
+
+  <rect x="65" y="430" width="300" height="105" rx="18" fill="#ffffff" stroke="#8ca1b8" stroke-width="2"/>
+  <text x="215" y="468" text-anchor="middle" class="zh label">V={v₁,…,v₆}</text>
+  <text x="215" y="505" text-anchor="middle" class="zh small">阶 |V|=6</text>
+  <rect x="760" y="115" width="290" height="105" rx="18" fill="#ffffff" stroke="#8ca1b8" stroke-width="2"/>
+  <text x="905" y="153" text-anchor="middle" class="zh label">E={连接}</text>
+  <text x="905" y="190" text-anchor="middle" class="zh small">大小 |E|=7</text>
+  <text x="585" y="125" text-anchor="middle" class="zh small">v₂ 的度为 3</text>
+  <path d="M555 132 C520 145 480 160 452 171" fill="none" stroke="#7c8ca1" stroke-width="2"/>
+  <text x="550" y="565" text-anchor="middle" class="zh small">同一条边连接两个顶点；顶点的度是与它相接的边数</text>
+</svg>

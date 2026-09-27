@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">根树的层次与遍历</title>
+  <desc id="desc">根树中的根、父子关系、深度，以及先序、后序和广度优先遍历示意。</desc>
+  <defs>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 32px; font-weight: 700; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .edge { stroke: #94a3b8; stroke-width: 5; }
+      .node { fill: #dbeafe; stroke: #3b82f6; stroke-width: 3; }
+      .root { fill: #fee2e2; stroke: #dc2626; stroke-width: 3; }
+      .leaf { fill: #fef3c7; stroke: #d97706; stroke-width: 3; }
+      .box { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .tag { fill: #eff6ff; stroke: #93c5fd; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="#f8fafc"/>
+  <text x="600" y="54" text-anchor="middle" class="zh title">根树把无向连接组织成层次结构</text>
+  <rect x="40" y="88" width="610" height="560" rx="22" class="box"/>
+  <text x="345" y="132" text-anchor="middle" class="zh label">父子关系、深度与叶结点</text>
+  <line x1="345" y1="205" x2="205" y2="315" class="edge"/>
+  <line x1="345" y1="205" x2="345" y2="315" class="edge"/>
+  <line x1="345" y1="205" x2="485" y2="315" class="edge"/>
+  <line x1="205" y1="315" x2="135" y2="440" class="edge"/>
+  <line x1="205" y1="315" x2="275" y2="440" class="edge"/>
+  <line x1="485" y1="315" x2="555" y2="440" class="edge"/>
+  <circle cx="345" cy="205" r="27" class="root"/><text x="345" y="213" text-anchor="middle" class="zh small">r</text>
+  <circle cx="205" cy="315" r="27" class="node"/><text x="205" y="323" text-anchor="middle" class="zh small">a</text>
+  <circle cx="345" cy="315" r="27" class="node"/><text x="345" y="323" text-anchor="middle" class="zh small">b</text>
+  <circle cx="485" cy="315" r="27" class="node"/><text x="485" y="323" text-anchor="middle" class="zh small">c</text>
+  <circle cx="135" cy="440" r="27" class="leaf"/><text x="135" y="448" text-anchor="middle" class="zh small">d</text>
+  <circle cx="275" cy="440" r="27" class="leaf"/><text x="275" y="448" text-anchor="middle" class="zh small">e</text>
+  <circle cx="555" cy="440" r="27" class="leaf"/><text x="555" y="448" text-anchor="middle" class="zh small">f</text>
+  <text x="345" y="510" text-anchor="middle" class="zh small">r 是根；a、b、c 是它的子结点</text>
+  <text x="345" y="545" text-anchor="middle" class="zh small">d、e、f 是叶结点；它们的深度为 2</text>
+  <text x="345" y="595" text-anchor="middle" class="zh small">从根到任意结点的路径唯一</text>
+
+  <rect x="690" y="88" width="470" height="560" rx="22" class="box"/>
+  <text x="925" y="132" text-anchor="middle" class="zh label">同一棵树的不同遍历</text>
+  <rect x="735" y="180" width="380" height="78" rx="14" class="tag"/>
+  <text x="925" y="213" text-anchor="middle" class="zh small">先序 DFS</text>
+  <text x="925" y="242" text-anchor="middle" class="zh small">r → a → d → e → b → c → f</text>
+  <rect x="735" y="285" width="380" height="78" rx="14" class="tag"/>
+  <text x="925" y="318" text-anchor="middle" class="zh small">后序 DFS</text>
+  <text x="925" y="347" text-anchor="middle" class="zh small">d → e → a → b → f → c → r</text>
+  <rect x="735" y="390" width="380" height="78" rx="14" class="tag"/>
+  <text x="925" y="423" text-anchor="middle" class="zh small">广度优先 BFS</text>
+  <text x="925" y="452" text-anchor="middle" class="zh small">r → a → b → c → d → e → f</text>
+  <text x="925" y="530" text-anchor="middle" class="zh small">DFS 先深入，BFS 先分层</text>
+  <text x="925" y="565" text-anchor="middle" class="zh small">遍历顺序服务于不同任务</text>
+</svg>

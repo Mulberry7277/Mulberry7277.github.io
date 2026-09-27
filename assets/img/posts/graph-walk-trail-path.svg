@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">游走、迹、路径与圈</title>
+  <desc id="desc">用四个小图比较游走、迹、路径和圈对顶点与边重复的限制。</desc>
+  <defs>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 17px; }
+      .panel { fill: #fff; stroke: #cbd5e1; stroke-width: 2; }
+      .edge { stroke: #94a3b8; stroke-width: 5; stroke-linecap: round; }
+      .hi { stroke: #e07a5f; stroke-width: 7; stroke-linecap: round; }
+      .node { fill: #fde68a; stroke: #c58b29; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="#f8fafc"/>
+  <text x="600" y="50" text-anchor="middle" class="zh title">路径相关概念：限制逐步加强</text>
+
+  <rect x="40" y="85" width="550" height="250" rx="20" class="panel"/>
+  <text x="315" y="125" text-anchor="middle" class="zh label">游走 walk</text>
+  <text x="315" y="153" text-anchor="middle" class="zh small">顶点和边都可以重复</text>
+  <line x1="140" y1="245" x2="270" y2="185" class="edge"/><line x1="270" y1="185" x2="430" y2="245" class="edge"/><line x1="270" y1="185" x2="270" y2="285" class="edge"/>
+  <path d="M140 245 L270 185 L430 245 L270 185 L140 245" class="hi" fill="none"/>
+  <circle cx="140" cy="245" r="20" class="node"/><circle cx="270" cy="185" r="20" class="node"/><circle cx="430" cy="245" r="20" class="node"/><circle cx="270" cy="285" r="20" class="node"/>
+  <text x="315" y="315" text-anchor="middle" class="zh small">示例：v₁→v₂→v₃→v₂→v₁</text>
+
+  <rect x="610" y="85" width="550" height="250" rx="20" class="panel"/>
+  <text x="885" y="125" text-anchor="middle" class="zh label">迹 trail</text>
+  <text x="885" y="153" text-anchor="middle" class="zh small">边不能重复，顶点可以重复</text>
+  <line x1="710" y1="245" x2="840" y2="185" class="edge"/><line x1="840" y1="185" x2="1000" y2="245" class="edge"/><line x1="840" y1="185" x2="840" y2="285" class="edge"/>
+  <path d="M710 245 L840 185 L1000 245 L840 285" class="hi" fill="none"/>
+  <circle cx="710" cy="245" r="20" class="node"/><circle cx="840" cy="185" r="20" class="node"/><circle cx="1000" cy="245" r="20" class="node"/><circle cx="840" cy="285" r="20" class="node"/>
+  <text x="885" y="315" text-anchor="middle" class="zh small">示例：v₁→v₂→v₃→v₄</text>
+
+  <rect x="40" y="385" width="550" height="250" rx="20" class="panel"/>
+  <text x="315" y="425" text-anchor="middle" class="zh label">路径 path</text>
+  <text x="315" y="453" text-anchor="middle" class="zh small">顶点和边都不能重复</text>
+  <line x1="140" y1="545" x2="270" y2="485" class="edge"/><line x1="270" y1="485" x2="430" y2="545" class="edge"/><line x1="270" y1="485" x2="270" y2="585" class="edge"/>
+  <path d="M140 545 L270 485 L430 545" class="hi" fill="none"/>
+  <circle cx="140" cy="545" r="20" class="node"/><circle cx="270" cy="485" r="20" class="node"/><circle cx="430" cy="545" r="20" class="node"/><circle cx="270" cy="585" r="20" class="node"/>
+  <text x="315" y="615" text-anchor="middle" class="zh small">示例：v₁→v₂→v₃</text>
+
+  <rect x="610" y="385" width="550" height="250" rx="20" class="panel"/>
+  <text x="885" y="425" text-anchor="middle" class="zh label">圈 cycle</text>
+  <text x="885" y="453" text-anchor="middle" class="zh small">闭合路径，首尾相同但中间顶点不重复</text>
+  <line x1="710" y1="545" x2="840" y2="485" class="edge"/><line x1="840" y1="485" x2="1000" y2="545" class="edge"/><line x1="1000" y1="545" x2="840" y2="585" class="edge"/><line x1="840" y1="585" x2="710" y2="545" class="edge"/>
+  <path d="M710 545 L840 485 L1000 545 L840 585 L710 545" class="hi" fill="none"/>
+  <circle cx="710" cy="545" r="20" class="node"/><circle cx="840" cy="485" r="20" class="node"/><circle cx="1000" cy="545" r="20" class="node"/><circle cx="840" cy="585" r="20" class="node"/>
+  <text x="885" y="615" text-anchor="middle" class="zh small">示例：v₁→v₂→v₃→v₄→v₁</text>
+</svg>

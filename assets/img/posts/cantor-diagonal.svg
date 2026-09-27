@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">康托尔对角线法</title>
+  <desc id="desc">展示通过改变列表中第 n 个数的第 n 位，构造一个不在列表中的新数。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#fdf2f8"/>
+    </linearGradient>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 22px; font-weight: 700; }
+      .small { font-size: 18px; }
+      .cell { fill: #fff; stroke: #9aa9bb; stroke-width: 2; }
+      .diag { fill: #fecaca; stroke: #dc2626; stroke-width: 3; }
+      .new { fill: #bbf7d0; stroke: #16a34a; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" class="zh title">康托尔对角线法：总能构造出列表之外的新数</text>
+  <text x="600" y="92" text-anchor="middle" class="zh small">假设所有由 1、2 组成的无限小数都已排成列表，逐位改变对角线数字</text>
+
+  <text x="150" y="145" class="zh label">列表中的数</text>
+  <text x="385" y="145" text-anchor="middle" class="zh label">第 1 位</text>
+  <text x="485" y="145" text-anchor="middle" class="zh label">第 2 位</text>
+  <text x="585" y="145" text-anchor="middle" class="zh label">第 3 位</text>
+  <text x="685" y="145" text-anchor="middle" class="zh label">第 4 位</text>
+  <text x="785" y="145" text-anchor="middle" class="zh label">…</text>
+
+  <text x="145" y="205" class="zh label">x₁</text>
+  <text x="145" y="275" class="zh label">x₂</text>
+  <text x="145" y="345" class="zh label">x₃</text>
+  <text x="145" y="415" class="zh label">x₄</text>
+  <text x="145" y="485" class="zh label">⋮</text>
+  <g>
+    <rect x="340" y="170" width="90" height="58" class="diag"/><rect x="440" y="170" width="90" height="58" class="cell"/><rect x="540" y="170" width="90" height="58" class="cell"/><rect x="640" y="170" width="90" height="58" class="cell"/>
+    <rect x="340" y="240" width="90" height="58" class="cell"/><rect x="440" y="240" width="90" height="58" class="diag"/><rect x="540" y="240" width="90" height="58" class="cell"/><rect x="640" y="240" width="90" height="58" class="cell"/>
+    <rect x="340" y="310" width="90" height="58" class="cell"/><rect x="440" y="310" width="90" height="58" class="cell"/><rect x="540" y="310" width="90" height="58" class="diag"/><rect x="640" y="310" width="90" height="58" class="cell"/>
+    <rect x="340" y="380" width="90" height="58" class="cell"/><rect x="440" y="380" width="90" height="58" class="cell"/><rect x="540" y="380" width="90" height="58" class="cell"/><rect x="640" y="380" width="90" height="58" class="diag"/>
+  </g>
+  <text x="385" y="207" text-anchor="middle" class="zh label">1</text><text x="485" y="207" text-anchor="middle" class="zh label">2</text><text x="585" y="207" text-anchor="middle" class="zh label">1</text><text x="685" y="207" text-anchor="middle" class="zh label">2</text>
+  <text x="385" y="277" text-anchor="middle" class="zh label">2</text><text x="485" y="277" text-anchor="middle" class="zh label">1</text><text x="585" y="277" text-anchor="middle" class="zh label">2</text><text x="685" y="277" text-anchor="middle" class="zh label">1</text>
+  <text x="385" y="347" text-anchor="middle" class="zh label">1</text><text x="485" y="347" text-anchor="middle" class="zh label">1</text><text x="585" y="347" text-anchor="middle" class="zh label">1</text><text x="685" y="347" text-anchor="middle" class="zh label">2</text>
+  <text x="385" y="417" text-anchor="middle" class="zh label">2</text><text x="485" y="417" text-anchor="middle" class="zh label">2</text><text x="585" y="417" text-anchor="middle" class="zh label">2</text><text x="685" y="417" text-anchor="middle" class="zh label">1</text>
+
+  <path d="M385 198 L485 268 L585 338 L685 408" stroke="#dc2626" stroke-width="4" fill="none"/>
+  <text x="870" y="235" class="zh label" fill="#b91c1c">取对角线数字</text>
+  <text x="870" y="275" class="zh small">1, 1, 1, 1, …</text>
+  <text x="870" y="345" class="zh label" fill="#15803d">逐位改变得到 y</text>
+  <rect x="850" y="370" width="260" height="65" rx="16" class="new"/>
+  <text x="980" y="412" text-anchor="middle" class="zh label">y=2,2,2,2,…</text>
+  <text x="600" y="545" text-anchor="middle" class="zh small">y 的第 n 位与 xₙ 的第 n 位不同，所以 y 不可能等于列表中的任何 xₙ</text>
+  <text x="600" y="585" text-anchor="middle" class="zh label">因此，这个列表不可能列出所有这样的数</text>
+</svg>

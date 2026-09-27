@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">二元关系的箭头表示</title>
+  <desc id="desc">展示关系 R 是笛卡尔积 A×B 的子集，并用箭头表示配对。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#fef3c7"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6b7280"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .set { fill: #fff; stroke: #8ca1b8; stroke-width: 3; }
+      .dot-a { fill: #ef6c57; }
+      .dot-b { fill: #4f8edb; }
+    </style>
+  </defs>
+  <rect width="1100" height="560" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">二元关系：笛卡尔积中的一部分有序对</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">R⊆A×B；若 (a,b)∈R，就从 a 指向 b</text>
+
+  <ellipse cx="260" cy="310" rx="145" ry="180" class="set" fill="#fee2e2"/>
+  <ellipse cx="840" cy="310" rx="145" ry="180" class="set" fill="#dbeafe"/>
+  <text x="260" y="155" text-anchor="middle" class="zh label">A</text>
+  <text x="840" y="155" text-anchor="middle" class="zh label">B</text>
+
+  <circle cx="260" cy="235" r="18" class="dot-a"/>
+  <circle cx="260" cy="315" r="18" class="dot-a"/>
+  <circle cx="260" cy="395" r="18" class="dot-a"/>
+  <text x="305" y="242" class="zh label">a₁</text>
+  <text x="305" y="322" class="zh label">a₂</text>
+  <text x="305" y="402" class="zh label">a₃</text>
+
+  <circle cx="840" cy="220" r="18" class="dot-b"/>
+  <circle cx="840" cy="300" r="18" class="dot-b"/>
+  <circle cx="840" cy="380" r="18" class="dot-b"/>
+  <text x="795" y="227" text-anchor="end" class="zh label">b₁</text>
+  <text x="795" y="307" text-anchor="end" class="zh label">b₂</text>
+  <text x="795" y="387" text-anchor="end" class="zh label">b₃</text>
+
+  <path d="M280 235 C450 175 640 170 820 220" fill="none" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M280 235 C470 255 630 275 820 300" fill="none" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M280 315 C470 315 650 300 820 300" fill="none" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M280 395 C460 440 650 420 820 380" fill="none" stroke="#6b7280" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="365" y="475" width="370" height="52" rx="14" fill="#ffffff" stroke="#b8c7da" stroke-width="2"/>
+  <text x="550" y="509" text-anchor="middle" class="zh small">R={(a₁,b₁),(a₁,b₂),(a₂,b₂),(a₃,b₃)}</text>
+</svg>

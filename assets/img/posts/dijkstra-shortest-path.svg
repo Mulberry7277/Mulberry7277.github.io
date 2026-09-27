@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">带权图中的最短路径</title>
+  <desc id="desc">从 s 到 t 的最短路径为 s-a-b-t，权重二加一加二等于五。</desc>
+  <defs><style>
+    .zh{font-family:"Microsoft YaHei","Segoe UI",sans-serif;fill:#1f2937}.title{font-size:32px;font-weight:700}.label{font-size:24px;font-weight:700}.small{font-size:20px}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:2}.edge{stroke:#cbd5e1;stroke-width:6;stroke-linecap:round}.route{stroke:#e07a5f;stroke-width:10;stroke-linecap:round}.node{fill:#dbeafe;stroke:#2563eb;stroke-width:3}.weight{font-family:"Segoe UI",sans-serif;font-size:22px;font-weight:700;fill:#334155}.box{fill:#fff7ed;stroke:#fdba74;stroke-width:2}
+  </style></defs>
+  <rect width="1200" height="630" rx="28" fill="#f8fafc"/>
+  <text x="600" y="55" text-anchor="middle" class="zh title">带权最短路比较的是权重总和</text>
+  <rect x="55" y="95" width="760" height="475" rx="22" class="panel"/>
+  <line x1="170" y1="330" x2="360" y2="205" class="edge"/><line x1="170" y1="330" x2="360" y2="450" class="edge"/>
+  <line x1="360" y1="205" x2="360" y2="450" class="edge"/><line x1="360" y1="205" x2="685" y2="330" class="edge"/><line x1="360" y1="450" x2="685" y2="330" class="edge"/>
+  <text x="255" y="245" class="weight">2</text><text x="255" y="430" class="weight">5</text><text x="378" y="335" class="weight">1</text><text x="515" y="245" class="weight">5</text><text x="515" y="420" class="weight">2</text>
+  <line x1="170" y1="330" x2="360" y2="205" class="route"/><line x1="360" y1="205" x2="360" y2="450" class="route"/><line x1="360" y1="450" x2="685" y2="330" class="route"/>
+  <circle cx="170" cy="330" r="30" class="node"/><circle cx="360" cy="205" r="30" class="node"/><circle cx="360" cy="450" r="30" class="node"/><circle cx="685" cy="330" r="30" class="node"/>
+  <text x="170" y="339" text-anchor="middle" class="zh small">s</text><text x="360" y="214" text-anchor="middle" class="zh small">a</text><text x="360" y="459" text-anchor="middle" class="zh small">b</text><text x="685" y="339" text-anchor="middle" class="zh small">t</text>
+  <text x="435" y="535" text-anchor="middle" class="zh small">红色路径：s → a → b → t</text>
+  <rect x="860" y="135" width="280" height="375" rx="20" class="box"/>
+  <text x="1000" y="185" text-anchor="middle" class="zh label">比较候选路线</text>
+  <text x="1000" y="245" text-anchor="middle" class="zh small">s → a → t：7</text>
+  <text x="1000" y="295" text-anchor="middle" class="zh small">s → b → t：7</text>
+  <text x="1000" y="355" text-anchor="middle" class="zh small">s → a → b → t：5</text>
+  <text x="1000" y="430" text-anchor="middle" class="zh label">最短距离 = 5</text>
+</svg>

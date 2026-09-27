@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">函数的映射表示</title>
+  <desc id="desc">展示函数从定义域 A 到陪域 B 的唯一映射，以及值域是陪域的子集。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 25px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .set { fill: #fff; stroke: #8295ad; stroke-width: 3; }
+      .a { fill: #fecdd3; stroke: #d66778; stroke-width: 2; }
+      .b { fill: #bfdbfe; stroke: #5e8fd3; stroke-width: 2; }
+      .range { fill: #bbf7d0; stroke: #5ea675; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect width="1100" height="560" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">函数：定义域中的每个元素都有唯一输出</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">f:A→B；每个 a∈A 恰好对应一个 f(a)∈B</text>
+
+  <ellipse cx="265" cy="310" rx="150" ry="190" class="set" fill="#fff1f2"/>
+  <ellipse cx="835" cy="310" rx="175" ry="190" class="set" fill="#eff6ff"/>
+  <text x="265" y="145" text-anchor="middle" class="zh label">定义域 A</text>
+  <text x="835" y="145" text-anchor="middle" class="zh label">陪域 B</text>
+  <text x="835" y="480" text-anchor="middle" class="zh small">绿色区域 = 值域 f(A)</text>
+
+  <circle cx="265" cy="220" r="18" class="a"/>
+  <circle cx="265" cy="310" r="18" class="a"/>
+  <circle cx="265" cy="400" r="18" class="a"/>
+  <text x="310" y="228" class="zh label">a₁</text>
+  <text x="310" y="318" class="zh label">a₂</text>
+  <text x="310" y="408" class="zh label">a₃</text>
+
+  <circle cx="835" cy="220" r="22" class="range"/>
+  <circle cx="835" cy="310" r="22" class="range"/>
+  <circle cx="835" cy="400" r="22" class="range"/>
+  <circle cx="835" cy="455" r="13" class="b"/>
+  <text x="790" y="228" text-anchor="end" class="zh label">b₁</text>
+  <text x="790" y="318" text-anchor="end" class="zh label">b₂</text>
+  <text x="790" y="408" text-anchor="end" class="zh label">b₃</text>
+  <text x="790" y="463" text-anchor="end" class="zh small">未被取到</text>
+
+  <path d="M285 220 C470 150 625 165 813 220" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M285 310 C465 280 630 280 813 310" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M285 400 C470 455 630 430 813 400" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="550" y="520" text-anchor="middle" class="zh small">值域 f(A) ⊆ B；函数要求每个输入只有一个输出</text>
+</svg>

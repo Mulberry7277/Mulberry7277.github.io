@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">集合的幂集结构</title>
+  <desc id="desc">展示集合 A={a,b,c} 的八个子集按元素个数分层排列。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#77839a"/>
+    </marker>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .node { fill: #fff; stroke: #8796aa; stroke-width: 2; }
+      .label { font-size: 20px; font-weight: 600; }
+      .small { font-size: 18px; }
+      .edge { stroke: #9aa7b8; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1100" height="620" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">幂集：一个集合的所有子集</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">A={a,b,c}，共有 2³=8 个子集；每条边表示“加入一个元素”</text>
+
+  <line x1="550" y1="165" x2="300" y2="260" class="edge"/>
+  <line x1="550" y1="165" x2="550" y2="260" class="edge"/>
+  <line x1="550" y1="165" x2="800" y2="260" class="edge"/>
+  <line x1="300" y1="315" x2="400" y2="405" class="edge"/>
+  <line x1="300" y1="315" x2="550" y2="405" class="edge"/>
+  <line x1="550" y1="315" x2="400" y2="405" class="edge"/>
+  <line x1="550" y1="315" x2="700" y2="405" class="edge"/>
+  <line x1="800" y1="315" x2="550" y2="405" class="edge"/>
+  <line x1="800" y1="315" x2="700" y2="405" class="edge"/>
+  <line x1="400" y1="460" x2="550" y2="535" class="edge"/>
+  <line x1="550" y1="460" x2="550" y2="535" class="edge"/>
+  <line x1="700" y1="460" x2="550" y2="535" class="edge"/>
+
+  <circle cx="550" cy="145" r="40" class="node" fill="#fde68a"/>
+  <text x="550" y="153" text-anchor="middle" class="zh label">∅</text>
+  <circle cx="300" cy="290" r="40" class="node"/>
+  <circle cx="550" cy="290" r="40" class="node"/>
+  <circle cx="800" cy="290" r="40" class="node"/>
+  <text x="300" y="298" text-anchor="middle" class="zh label">{a}</text>
+  <text x="550" y="298" text-anchor="middle" class="zh label">{b}</text>
+  <text x="800" y="298" text-anchor="middle" class="zh label">{c}</text>
+  <circle cx="400" cy="435" r="40" class="node" fill="#cffafe"/>
+  <circle cx="550" cy="435" r="40" class="node" fill="#cffafe"/>
+  <circle cx="700" cy="435" r="40" class="node" fill="#cffafe"/>
+  <text x="400" y="443" text-anchor="middle" class="zh small">{a,b}</text>
+  <text x="550" y="443" text-anchor="middle" class="zh small">{a,c}</text>
+  <text x="700" y="443" text-anchor="middle" class="zh small">{b,c}</text>
+  <circle cx="550" cy="555" r="48" class="node" fill="#bbf7d0"/>
+  <text x="550" y="563" text-anchor="middle" class="zh label">{a,b,c}</text>
+  <text x="85" y="575" class="zh small">按子集大小分层</text>
+  <text x="1010" y="575" text-anchor="end" class="zh small">每个元素都有“选/不选”两种状态</text>
+</svg>

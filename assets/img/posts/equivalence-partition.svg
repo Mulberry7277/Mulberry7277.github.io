@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+  <title id="title">等价关系与集合划分</title>
+  <desc id="desc">展示等价关系如何把集合分成互不相交的等价类。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f3ff"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <style>
+      .zh { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; fill: #1f2937; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 24px; font-weight: 700; }
+      .small { font-size: 19px; }
+      .outer { fill: #ffffff; stroke: #8293a8; stroke-width: 3; }
+      .class-a { fill: #fecdd3; stroke: #d66778; stroke-width: 3; }
+      .class-b { fill: #bfdbfe; stroke: #5e8fd3; stroke-width: 3; }
+      .class-c { fill: #bbf7d0; stroke: #5ea675; stroke-width: 3; }
+    </style>
+  </defs>
+  <rect width="1100" height="600" rx="28" fill="url(#bg)"/>
+  <text x="550" y="52" text-anchor="middle" class="zh title">等价关系把集合划分成互不相交的等价类</text>
+  <text x="550" y="92" text-anchor="middle" class="zh small">等价关系满足自反、对称、传递；每个元素属于且只属于一个等价类</text>
+
+  <rect x="70" y="145" width="420" height="350" rx="24" class="outer"/>
+  <text x="280" y="190" text-anchor="middle" class="zh label">集合 A</text>
+  <ellipse cx="185" cy="300" rx="95" ry="65" class="class-a"/>
+  <ellipse cx="365" cy="300" rx="95" ry="65" class="class-b"/>
+  <ellipse cx="275" cy="415" rx="95" ry="55" class="class-c"/>
+  <text x="185" y="307" text-anchor="middle" class="zh label">[a]</text>
+  <text x="365" y="307" text-anchor="middle" class="zh label">[b]</text>
+  <text x="275" y="422" text-anchor="middle" class="zh label">[c]</text>
+
+  <path d="M490 320 H615" stroke="#8391a4" stroke-width="4"/>
+  <path d="M605 310 L625 320 L605 330" fill="none" stroke="#8391a4" stroke-width="4"/>
+  <text x="552" y="292" text-anchor="middle" class="zh small">等价类</text>
+
+  <rect x="650" y="145" width="380" height="350" rx="24" fill="#ffffff" stroke="#8293a8" stroke-width="3"/>
+  <text x="840" y="190" text-anchor="middle" class="zh label">划分 𝓟(A)</text>
+  <rect x="705" y="230" width="270" height="58" rx="14" class="class-a"/>
+  <text x="840" y="268" text-anchor="middle" class="zh label">[a]</text>
+  <rect x="705" y="310" width="270" height="58" rx="14" class="class-b"/>
+  <text x="840" y="348" text-anchor="middle" class="zh label">[b]</text>
+  <rect x="705" y="390" width="270" height="58" rx="14" class="class-c"/>
+  <text x="840" y="428" text-anchor="middle" class="zh label">[c]</text>
+
+  <text x="550" y="555" text-anchor="middle" class="zh small">等价关系 ↔ 集合的一个划分</text>
+</svg>
