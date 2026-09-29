@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">持续学习中的突触巩固</title>
+  <desc id="desc">从任务 A 转向任务 B 后，旧任务的重要参数受到较强约束，变化较小；较不重要的参数仍可改变，以适应新任务。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.scale{stroke:#7a8799;stroke-width:5;stroke-linecap:round}.move{stroke-width:6;stroke-linecap:round}</style>
+    <marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2d7fb6"/></marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#db8053"/></marker>
+  </defs>
+  <rect width="1100" height="500" rx="25" fill="#f8fafc"/>
+  <text x="550" y="55" text-anchor="middle" class="t h">学习新任务时，哪些参数应该保持稳定？</text>
+  <rect x="52" y="104" width="482" height="311" rx="23" fill="#fff" stroke="#d4dfeb" stroke-width="2"/>
+  <rect x="566" y="104" width="482" height="311" rx="23" fill="#fff" stroke="#d4dfeb" stroke-width="2"/>
+  <text x="293" y="151" text-anchor="middle" class="t l">旧任务中的重要参数</text>
+  <text x="807" y="151" text-anchor="middle" class="t l">旧任务中较不重要的参数</text>
+  <line x1="117" y1="271" x2="473" y2="271" class="scale"/>
+  <line x1="631" y1="271" x2="987" y2="271" class="scale"/>
+  <circle cx="275" cy="271" r="16" fill="#2d7fb6"/>
+  <circle cx="313" cy="271" r="16" fill="#80bad9"/>
+  <path d="M278 225 L308 225" class="move" stroke="#2d7fb6" marker-end="url(#ab)"/>
+  <circle cx="703" cy="271" r="16" fill="#db8053"/>
+  <circle cx="898" cy="271" r="16" fill="#efbb9e"/>
+  <path d="M706 225 L889 225" class="move" stroke="#db8053" marker-end="url(#ao)"/>
+  <text x="293" y="330" text-anchor="middle" class="t s">参数改变较小：保护旧知识</text>
+  <text x="807" y="330" text-anchor="middle" class="t s">参数仍可移动：适应新任务</text>
+  <text x="550" y="382" text-anchor="middle" class="t s">深色点：任务 A 学到的位置　浅色点：学习任务 B 后的位置</text>
+  <text x="550" y="463" text-anchor="middle" class="t s">EWC 用旧任务的参数重要性估计，为不同参数施加不同的改变代价</text>
+</svg>

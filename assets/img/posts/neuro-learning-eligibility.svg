@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">资格迹与延迟奖励</title>
+  <desc id="desc">气味刺激引起突触活动并产生资格迹，迹线随时间衰减。奖励晚些到来时，如果迹线仍存在，就能调制对应突触。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#253047}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.axis{stroke:#63738a;stroke-width:3;stroke-linecap:round}.grid{stroke:#c5d1df;stroke-width:2;stroke-dasharray:7 7}</style>
+    <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#7eb4de" stop-opacity=".36"/><stop offset="1" stop-color="#7eb4de" stop-opacity=".03"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#63738a"/></marker>
+  </defs>
+  <rect width="1100" height="500" rx="25" fill="#f8fafc"/>
+  <text x="550" y="58" text-anchor="middle" class="t h">奖励来晚了，突触怎样记住先前的活动？</text>
+  <rect x="65" y="91" width="970" height="355" rx="22" fill="#fff" stroke="#d5e0eb" stroke-width="2"/>
+  <line x1="130" y1="365" x2="975" y2="365" class="axis" marker-end="url(#arrow)"/>
+  <line x1="130" y1="365" x2="130" y2="130" class="axis" marker-end="url(#arrow)"/>
+  <path d="M222 365 L222 164 C315 205 425 262 590 306 C710 331 840 349 925 356 L925 365 Z" fill="url(#fill)"/>
+  <path d="M222 164 C315 205 425 262 590 306 C710 331 840 349 925 356" fill="none" stroke="#357fb7" stroke-width="6" stroke-linecap="round"/>
+  <line x1="222" y1="145" x2="222" y2="365" class="grid"/>
+  <line x1="723" y1="145" x2="723" y2="365" class="grid"/>
+  <circle cx="723" cy="334" r="9" fill="#dd7647"/>
+  <rect x="156" y="110" width="132" height="53" rx="15" fill="#e1effe" stroke="#8bb9e0" stroke-width="2"/>
+  <text x="222" y="143" text-anchor="middle" class="t l">气味输入</text>
+  <rect x="655" y="110" width="136" height="53" rx="15" fill="#fff0dd" stroke="#edba72" stroke-width="2"/>
+  <text x="723" y="143" text-anchor="middle" class="t l">奖励到来</text>
+  <text x="340" y="228" class="t l" fill="#357fb7">资格迹逐渐衰减</text>
+  <text x="736" y="302" class="t s" fill="#dd7647">仍有迹线 → 可被调制</text>
+  <text x="933" y="399" text-anchor="end" class="t s">时间</text>
+  <text x="151" y="191" class="t s">迹线强度</text>
+  <text x="550" y="482" text-anchor="middle" class="t s">气味与奖励的间隔只作概念示意，不代表固定的生物时间常数</text>
+</svg>

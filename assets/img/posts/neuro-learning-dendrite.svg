@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">分离树突模型中的前馈输入与反馈信号</title>
+  <desc id="desc">基底树突接收前馈活动，顶端树突接收反馈或目标信号。分离树突模型让神经元利用不同区室的信号形成局部学习信息。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#27354b}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.tree{fill:none;stroke:#8191a6;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}.arr{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.blue{stroke:#3682bb}.orange{stroke:#d78b48}</style>
+    <marker id="ab" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#3682bb"/></marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d78b48"/></marker>
+  </defs>
+  <rect width="1100" height="520" rx="25" fill="#f8fafc"/>
+  <text x="550" y="56" text-anchor="middle" class="t h">一个神经元内，信号也可以分区</text>
+  <rect x="45" y="162" width="245" height="105" rx="20" fill="#e7f1ff" stroke="#8ab7df" stroke-width="2"/>
+  <text x="167" y="205" text-anchor="middle" class="t l">前馈输入</text><text x="167" y="237" text-anchor="middle" class="t s">来自上一层</text>
+  <rect x="409" y="89" width="267" height="77" rx="20" fill="#fff0dd" stroke="#e7b676" stroke-width="2"/>
+  <text x="542" y="136" text-anchor="middle" class="t l">反馈 / 目标信号</text>
+  <path d="M542 166 L542 205" class="arr orange" marker-end="url(#ao)"/>
+  <path d="M540 206 L540 295 M540 226 L492 196 L466 181 M540 224 L589 193 L617 176 M540 247 L500 228 M540 246 L577 225" class="tree"/>
+  <path d="M540 298 L540 322 M520 329 L440 298 L397 282 M521 343 L441 371 L389 397 M559 329 L626 298 L663 279 M561 345 L629 373 L668 397" class="tree"/>
+  <circle cx="540" cy="335" r="36" fill="#e9f4ea" stroke="#86b592" stroke-width="3"/>
+  <text x="540" y="343" text-anchor="middle" class="t s">胞体</text>
+  <path d="M290 214 C345 214 359 265 400 281" class="arr blue" marker-end="url(#ab)"/>
+  <text x="327" y="178" class="t s" fill="#3682bb">基底树突</text>
+  <text x="692" y="184" class="t s" fill="#d78b48">顶端树突</text>
+  <path d="M676 271 C727 273 738 311 780 311" class="arr orange" marker-end="url(#ao)"/>
+  <path d="M577 338 C673 340 720 355 780 355" class="arr blue" marker-end="url(#ab)"/>
+  <rect x="791" y="267" width="258" height="131" rx="20" fill="#fff" stroke="#c6d2df" stroke-width="2"/>
+  <text x="920" y="313" text-anchor="middle" class="t l">局部学习信息</text>
+  <text x="920" y="345" text-anchor="middle" class="t s">比较不同区室的信号</text>
+  <text x="920" y="374" text-anchor="middle" class="t s">再影响突触可塑性</text>
+  <text x="550" y="476" text-anchor="middle" class="t s">这是分离树突学习模型的示意，并非已证实的通用神经元规则</text>
+</svg>

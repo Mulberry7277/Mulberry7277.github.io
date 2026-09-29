@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">e-prop 的局部迹线与学习信号</title>
+  <desc id="desc">循环脉冲网络中的一个突触在线产生资格迹，输出误差形成到达神经元的学习信号，两者相乘后近似得到权重更新。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:17px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1100" height="500" rx="25" fill="#f8fafc"/>
+  <text x="550" y="57" text-anchor="middle" class="t h">e-prop：局部资格迹 × 学习信号</text>
+  <rect x="45" y="104" width="363" height="300" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="226" y="144" text-anchor="middle" class="t l">循环脉冲网络</text>
+  <path d="M141 243 L222 194 M222 194 L309 252 M309 252 L141 243 M141 243 L229 319 M229 319 L309 252" class="arr" stroke-width="3"/>
+  <path d="M148 240 L215 202" stroke="#df794a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="141" cy="243" r="25" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="222" cy="194" r="25" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="309" cy="252" r="25" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/>
+  <circle cx="229" cy="319" r="25" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <text x="226" y="379" text-anchor="middle" class="t s">橙色突触：在线记录局部活动</text>
+  <path d="M409 254 L478 254" class="arr" marker-end="url(#a)"/>
+  <rect x="489" y="171" width="235" height="90" rx="19" fill="#e5f4eb" stroke="#83bd9b" stroke-width="2"/>
+  <text x="606" y="207" text-anchor="middle" class="t l">资格迹 e(t)</text>
+  <text x="606" y="236" text-anchor="middle" class="t s">突触附近、随时间更新</text>
+  <rect x="489" y="302" width="235" height="90" rx="19" fill="#fff0df" stroke="#e5b174" stroke-width="2"/>
+  <text x="606" y="338" text-anchor="middle" class="t l">学习信号 L(t)</text>
+  <text x="606" y="367" text-anchor="middle" class="t s">输出误差或奖励反馈</text>
+  <path d="M725 214 C774 214 756 265 799 265" class="arr" marker-end="url(#a)"/>
+  <path d="M725 347 C774 347 756 280 799 280" class="arr" marker-end="url(#a)"/>
+  <circle cx="835" cy="274" r="35" fill="#fff" stroke="#d98e72" stroke-width="3"/>
+  <text x="835" y="286" text-anchor="middle" class="t h">×</text>
+  <path d="M871 274 L917 274" class="arr" marker-end="url(#a)"/>
+  <rect x="922" y="222" width="145" height="104" rx="18" fill="#fcebe7" stroke="#dfaa9b" stroke-width="2"/>
+  <text x="994" y="262" text-anchor="middle" class="t l">权重更新</text>
+  <text x="994" y="292" text-anchor="middle" class="t s">Δw</text>
+  <text x="550" y="460" text-anchor="middle" class="t s">这是一种近似信用分配方法；学习信号的来源仍需具体模型解释</text>
+</svg>

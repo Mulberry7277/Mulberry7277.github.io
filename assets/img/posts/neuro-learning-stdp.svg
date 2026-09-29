@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">STDP 的典型时间窗</title>
+  <desc id="desc">横轴是突触后与突触前脉冲的时间差，纵轴是突触权重变化。突触前先于突触后时对应增强，顺序相反时对应减弱。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#253047}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:600}.s{font-size:18px}.axis{stroke:#596579;stroke-width:3;stroke-linecap:round}.grid{stroke:#d8e1ed;stroke-width:2;stroke-dasharray:7 8}.blue{stroke:#2878b9;fill:none}.orange{stroke:#dd7145;fill:none}</style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596579"/></marker>
+  </defs>
+  <rect width="1100" height="520" rx="25" fill="#f8fafc"/>
+  <text x="550" y="57" text-anchor="middle" class="t h">脉冲先后顺序决定突触变化方向</text>
+  <rect x="75" y="86" width="950" height="365" rx="22" fill="#fff" stroke="#d6e0eb" stroke-width="2"/>
+  <line x1="150" y1="265" x2="970" y2="265" class="axis" marker-end="url(#arrow)"/>
+  <line x1="550" y1="400" x2="550" y2="118" class="axis" marker-end="url(#arrow)"/>
+  <line x1="550" y1="120" x2="550" y2="404" class="grid"/>
+  <path d="M150 270 C260 277 390 300 475 354 C520 382 540 401 549 411" class="blue" stroke-width="7" stroke-linecap="round"/>
+  <path d="M552 124 C575 160 615 204 690 235 C790 258 890 264 955 265" class="orange" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="550" cy="265" r="5" fill="#596579"/>
+  <text x="555" y="433" text-anchor="middle" class="t s">0</text>
+  <text x="975" y="295" text-anchor="end" class="t s">时间差 Δt = t后 − t前</text>
+  <text x="115" y="159" class="t s">权重变化 Δw</text>
+  <text x="181" y="212" class="t l" fill="#2878b9">突触后先放电</text>
+  <text x="181" y="243" class="t s" fill="#2878b9">常见情况：连接减弱</text>
+  <text x="729" y="150" class="t l" fill="#dd7145">突触前先放电</text>
+  <text x="729" y="181" class="t s" fill="#dd7145">常见情况：连接增强</text>
+  <text x="550" y="487" text-anchor="middle" class="t s">示意曲线；真实时间窗因脑区、细胞和调制状态而异</text>
+</svg>

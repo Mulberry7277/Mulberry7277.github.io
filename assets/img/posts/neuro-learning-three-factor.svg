@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-labelledby="title desc">
+  <title id="title">三因子学习规则</title>
+  <desc id="desc">突触前和突触后活动在突触处形成资格迹，奖励或神经调质作为第三因子筛选资格迹，产生权重更新。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:23px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#65758a;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.dash{stroke-dasharray:8 8}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#65758a"/></marker>
+  </defs>
+  <rect width="1100" height="500" rx="25" fill="#f8fafc"/>
+  <text x="550" y="60" text-anchor="middle" class="t h">局部活动 × 调制信号 → 权重更新</text>
+  <rect x="48" y="125" width="220" height="104" rx="20" fill="#e2efff" stroke="#6ea8de" stroke-width="2"/>
+  <text x="158" y="172" text-anchor="middle" class="t l">突触前活动</text><text x="158" y="202" text-anchor="middle" class="t s">何时传来输入</text>
+  <rect x="48" y="287" width="220" height="104" rx="20" fill="#e2efff" stroke="#6ea8de" stroke-width="2"/>
+  <text x="158" y="334" text-anchor="middle" class="t l">突触后活动</text><text x="158" y="364" text-anchor="middle" class="t s">神经元如何响应</text>
+  <path d="M268 177 C325 177 332 245 382 245" class="arr" marker-end="url(#a)"/>
+  <path d="M268 339 C325 339 332 267 382 267" class="arr" marker-end="url(#a)"/>
+  <rect x="388" y="206" width="228" height="102" rx="20" fill="#e8f6ed" stroke="#7fbd99" stroke-width="2"/>
+  <text x="502" y="248" text-anchor="middle" class="t l">资格迹</text><text x="502" y="279" text-anchor="middle" class="t s">局部的短期记忆</text>
+  <rect x="387" y="91" width="230" height="80" rx="20" fill="#fff1df" stroke="#e4ae61" stroke-width="2"/>
+  <text x="502" y="128" text-anchor="middle" class="t l">第三因子</text><text x="502" y="153" text-anchor="middle" class="t s">奖励 / 误差 / 神经调质</text>
+  <path d="M617 130 C688 130 668 246 727 246" class="arr dash" marker-end="url(#a)"/>
+  <path d="M616 257 L728 257" class="arr" marker-end="url(#a)"/>
+  <circle cx="765" cy="256" r="36" fill="#fff" stroke="#dc8c64" stroke-width="3"/>
+  <text x="765" y="267" text-anchor="middle" class="t h">×</text>
+  <path d="M802 256 L871 256" class="arr" marker-end="url(#a)"/>
+  <rect x="878" y="202" width="178" height="108" rx="20" fill="#fcebea" stroke="#e39a92" stroke-width="2"/>
+  <text x="967" y="250" text-anchor="middle" class="t l">权重更新</text><text x="967" y="280" text-anchor="middle" class="t s">增强或减弱</text>
+  <text x="550" y="449" text-anchor="middle" class="t s">局部活动决定“哪条突触”，调制信号决定“这次经历是否值得写入”</text>
+</svg>
