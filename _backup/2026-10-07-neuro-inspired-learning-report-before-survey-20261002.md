@@ -103,14 +103,6 @@ $$
 
 *图 2。三因子规则的功能分解：局部活动提出候选改变，神经调质筛选候选改变。*
 
-### 2.4 先用一篇综述看清树突学习的范围
-
-在进入反向传播和具体算法之前，可以先用 Lei、Gu 和 Gao 2026 年的综述建立一张文献地图：树突学习不是单一模型，而是由四层问题组成——树突的生物学基础、树突启发的网络结构、局部学习规则，以及持续学习和低功耗应用。[综述及 DOI](https://doi.org/10.53941/jaia.2026.100006)
-
-这四层之间需要分开：树突分支可以提供额外的空间隔室和时间尺度，树突电位可以参与局部预测，但只有当这些局部变量真正进入权重更新时，才是在讨论“树突学习规则”。例如 DH-SNN 主要研究树突动力学和多时间尺度表示，参数仍通过 BPTT 训练；e-prop 则主要解决资格迹和时间信用分配；LPL 关注局部预测和 Hebbian 可塑性。把它们放在同一张地图上，能避免把“有树突结构”和“能局部学习”混为一谈。
-
-这篇综述还提供了后续原始论文的入口。生物学和计算基础可以追踪 Gidon 等人关于人类皮层树突计算的研究，以及 Urbanczik 和 Senn 的树突预测模型；局部误差机制可以追踪 Guerguiev 等人的分离树突模型；更接近人工网络参数更新的方向，则可以继续阅读 Bicknell 与 Häusser 的非线性树突学习规则和 2025 年的 Dendritic Localized Learning。汇报时，这篇综述适合占用一页背景介绍，真正的算法结论仍应回到这些原始论文。
-
 ## 3. 反向传播的优势和生物实现上的疑问
 
 汇报时不要把反向传播说成“错误的方法”。它是目前训练深度网络最成功的工具之一，问题在于它与已知生物机制之间存在张力。
@@ -253,65 +245,67 @@ $$
 
 LPL 是一个有生物启发性的局部学习框架，但它仍然是规范性模型，不是对大脑真实突触分子过程的完整证明。论文中的深层实验使用了人工网络和局部目标；真实脑区是否有相同的预测误差形式、如何计算活动方差、如何在不同分支上实现这些量，都还需要神经科学实验检验。
 
-## 6. 论文三：前瞻性配置如何用局部预测误差替代反向传播
+## 6. 论文三：DH-SNN 说明树突动力学和学习规则不是一回事
 
 ### 6.1 论文信息
 
-**论文**：Yuhang Song et al., *Inferring neural activity before plasticity as a foundation for learning beyond backpropagation*。
+**论文**：Hanle Zheng et al., *Temporal dendritic heterogeneity incorporated with spiking neural networks for learning multi-timescale dynamics*。
 
-**刊物和时间**：*Nature Neuroscience* 27, 348–358（2024），在线发表于 2024 年 1 月 3 日。论文记录的投稿时间是 2022 年 5 月 18 日，接收时间是 2023 年 11 月 2 日。[论文页面](https://doi.org/10.1038/s41593-023-01514-1)。
+**刊物和时间**：*Nature Communications* 15, 277（2024），在线发表于 2024 年 1 月 4 日。论文记录的投稿时间是 2023 年 7 月 31 日，接收时间是 2023 年 12 月 21 日。[论文页面](https://www.nature.com/articles/s41467-023-44614-z)；[开放全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10766638/)。
 
-**作者背景**：作者团队横跨牛津大学的计算机科学、计算神经科学和脑网络动力学研究方向。Rafal Bogacz 的研究长期关注预测编码、强化学习和生物神经网络中的信用分配；因此，这篇论文更接近“具有神经科学约束的学习理论”，而不是某个单一脑区的实验论文。
+**作者背景**：作者团队主要来自清华大学脑启发计算研究中心、中国科学院自动化研究所和相关计算神经形态方向。Lei Deng 的研究简介显示，他的工作覆盖脑启发计算、机器学习、脉冲神经网络学习和神经形态芯片。[作者研究简介](https://dllfei.github.io/)。因此，这篇论文更接近“神经形态工程和 SNN 动力学设计”，而不是针对真实树突突触可塑性的实验研究。
 
-### 6.2 它试图解决什么问题
+### 6.2 树突分支为什么有用
 
-反向传播先修改权重，下一次前向计算时神经活动才随之改变。作者提出相反的顺序：输入和目标到达后，先让网络活动松弛到一个“学习完成后应该出现的状态”，再用这个状态更新权重。这个过程称为前瞻性配置（prospective configuration）。
+单一 LIF 神经元只有一个主要的膜电位时间常数。如果网络要同时处理快速变化和缓慢变化的时间模式，所有输入都挤在同一条时间通道中。
 
-![反向传播与前瞻性配置的学习顺序对比](/assets/img/posts/neuro-learning-prospective.svg)
-
-*图 4。前瞻性配置把活动松弛放在权重更新之前。本文根据 Song 等人（2024）的机制示意自绘。*
-
-### 6.3 局部预测误差如何进入权重更新
-
-在预测编码网络中，第 $l$ 层的误差信号可以写成：
+DH-SNN 的做法是让不同树突分支具有不同的时间因素。可以用简化形式表示：
 
 $$
-\varepsilon^l=x^l-w^{l-1}f(x^{l-1}).
-$$
-
-权重更新则是：
-
-$$
-\Delta w^l
+u_{jk}[t+1]
 =
-\alpha\,\varepsilon^{l+1}\big(f(x^l)\big)^{\mathsf T}.
+\lambda_{jk}u_{jk}[t]
++
+\sum_i w_{ijk}s_i[t],
 $$
 
-它可以理解为两个局部量的乘积：突触前活动提出“哪些连接参与了当前计算”，相邻层的预测误差决定“这些连接应该怎样改变”。网络的活动松弛承担了部分信用分配工作，而不是把最终误差沿所有层反向展开。
+其中 $k$ 表示树突分支，$\lambda_{jk}$ 可以在不同分支之间不同。胞体再把多个分支的状态整合起来：
 
-### 6.4 论文展示了什么
+$$
+u_j^{\mathrm{soma}}[t]
+=
+\sum_k g_{jk}\phi_k(u_{jk}[t]).
+$$
 
-作者在深层分类、在线学习、少样本学习、持续学习、变化环境和强化学习任务中比较了前瞻性配置与反向传播。结果显示，前瞻性配置在减少学习干扰和小批量在线学习方面具有优势，并能够解释一些人类和动物学习实验中的活动变化。[论文页面](https://doi.org/10.1038/s41593-023-01514-1)
+这样，一个神经元内部就拥有多条时间尺度不同的动态通道：短时间常数分支响应快速变化，长时间常数分支保留更久的历史。
 
-### 6.5 这篇论文的边界
+### 6.3 论文展示了什么
 
-它不是 STDP、三因子奖励规则或 LIF 网络学习算法。主要模型是速率型预测编码网络，训练时需要固定输入和目标，并经过多步活动松弛。因此，更准确的概括是：
+作者提出 DH-LIF 神经元，并构建 DH-SFNN 和 DH-SRNN，用不同时间尺度处理具有复杂动态的任务。实验表明，引入多个时间异质的树突分支可以提升网络对多时间尺度信号的处理能力。[论文开放全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10766638/)
 
-> 预测误差可以在局部能量网络中产生权重更新，但局部更新仍然依赖网络活动先达到一个由目标约束的状态。
+### 6.4 为什么它不能直接当作局部学习规则
 
-与 e-prop 相比，它不重点解决跨时间的资格迹，而是解决深层网络中的空间信用分配和学习干扰；与 LPL 相比，它需要显式的能量松弛和目标约束；与 DH-SNN 相比，它讨论的是学习规则而不是树突时间常数。DH-SNN 可以保留为补充对照，但不再作为三篇主讲论文之一。
+这篇论文的关键贡献是**神经元动力学结构**，不是三因子突触更新。模型参数主要通过 BPTT 优化。因此，它回答的是：
+
+> 如果神经元内部存在具有不同时间常数的树突分支，网络是否更容易表示复杂时间信号？
+
+它没有直接回答：
+
+> 一个树突分支上的突触能否只依靠局部活动和局部误差，在运行过程中完成权重更新？
+
+这一区分非常适合在汇报中主动说出来。它能够避免把“树突启发的网络结构”和“树突启发的学习机制”混为一谈。
 
 ## 7. 三篇论文放在同一条机制链上
 
-| 问题             | e-prop                       | LPL                              | 前瞻性配置                   |
+| 问题             | e-prop                       | LPL                              | DH-SNN                       |
 | ---------------- | ---------------------------- | -------------------------------- | ---------------------------- |
-| 主要机制         | 资格迹 + 学习信号            | Hebbian + 预测性可塑性           | 活动松弛 + 局部预测误差      |
-| 主要对象         | 循环脉冲网络                 | 深层表示学习网络，并可推广到 SNN | 能量型和预测编码网络         |
-| 参数是否局部更新 | 资格迹局部，学习信号需要反馈 | layer-local 规则可局部更新       | 相邻层活动和误差可局部更新   |
-| 是否使用奖励     | 有 reward-based e-prop       | 主要使用时间连续性和自监督预测   | 强化学习实验中可使用奖励目标 |
-| 解决的问题       | 时间信用分配                 | 预测性表示学习与表征塌缩         | 空间信用分配与学习干扰       |
-| 生物启发程度     | 学习规则较强                 | 局部规则较强，但仍是规范性模型   | 预测编码与局部塑性较强       |
-| 汇报中的作用     | 时间机制主线                 | 局部预测主线                     | 超越反向传播的桥梁           |
+| 主要机制         | 资格迹 + 学习信号            | Hebbian + 预测性可塑性           | 树突分支的时间异质性         |
+| 主要对象         | 循环脉冲网络                 | 深层表示学习网络，并可推广到 SNN | 多时间尺度 SNN               |
+| 参数是否局部更新 | 资格迹局部，学习信号需要反馈 | layer-local 规则可局部更新       | 主要通过 BPTT                |
+| 是否使用奖励     | 有 reward-based e-prop       | 主要使用时间连续性和自监督预测   | 不是重点                     |
+| 解决的问题       | 时间信用分配                 | 预测性表示学习与表征塌缩         | 多时间尺度动力学             |
+| 生物启发程度     | 学习规则较强                 | 局部规则较强，但仍是规范性模型   | 动力学结构较强，学习规则较弱 |
+| 汇报中的作用     | 主线论文                     | 最新机制论文                     | 边界和对照论文               |
 
 把三篇论文连接起来，可以得到一个清晰的设计空间：
 
@@ -363,9 +357,9 @@ $$
 
 先说明纯 Hebbian 学习为什么会导致相关性过强或表征塌缩，再说明预测性项和稳态项分别做什么。不要逐项推导全部公式，只展示简化版，并用“预测未来活动”作为直觉。
 
-### 14–17 分钟：讲前瞻性配置
+### 14–17 分钟：讲 DH-SNN
 
-用一页图对比两种顺序：反向传播先改权重，前瞻性配置先让神经活动松弛，再用局部预测误差巩固权重。随后说明它仍然需要目标约束和多步松弛，因此属于预测编码式局部学习，而不是纯 STDP。
+用一页图解释不同树突分支具有不同时间常数。随后主动指出：这篇论文通过 BPTT 训练，因此它主要是树突动力学启发，而不是局部突触学习规则。
 
 ### 17–20 分钟：总结与开放问题
 
@@ -395,7 +389,7 @@ $$
 
 汇报可以用下面这段话结束：
 
-> 神经启发的学习机制不是寻找一个完全替代反向传播的单一算法，而是重新分配学习所需的信息。突触前、后活动提供局部相关性，资格迹保存过去的因果痕迹，预测编码和树突机制提供局部误差，神经调质和奖励信号决定哪些活动值得保留，慢速巩固机制则决定改变保持多久。e-prop 展示了怎样用资格迹解决循环网络的时间信用分配，LPL 展示了预测性和 Hebbian 可塑性如何共同形成稳定表征，前瞻性配置则展示了怎样先调整神经活动、再用局部误差巩固突触。
+> 神经启发的学习机制不是寻找一个完全替代反向传播的单一算法，而是重新分配学习所需的信息。突触前、后活动提供局部相关性，资格迹保存过去的因果痕迹，树突和预测机制提供局部误差，神经调质和奖励信号决定哪些活动值得保留，慢速巩固机制则决定改变保持多久。e-prop 展示了怎样用资格迹解决循环网络的时间信用分配，LPL 展示了预测性和 Hebbian 可塑性如何共同形成稳定表征，DH-SNN 则提醒我们必须区分树突动力学和树突学习规则。
 
 这也是本部分与“神经编码”“记忆与持续学习”“全脑系统和生物计算”之间的接口：
 
@@ -408,11 +402,7 @@ $$
 1. Bellec, G. et al. *A solution to the learning dilemma for recurrent networks of spiking neurons*. **Nature Communications** 11, 3625 (2020). [论文](https://www.nature.com/articles/s41467-020-17236-y)；[全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC7367848/)。
 2. Halvagal, M. S. & Zenke, F. *The combination of Hebbian and predictive plasticity learns invariant object representations in deep sensory networks*. **Nature Neuroscience** 26, 1906–1915 (2023). [论文](https://www.nature.com/articles/s41593-023-01460-y)。
 3. Zheng, H. et al. *Temporal dendritic heterogeneity incorporated with spiking neural networks for learning multi-timescale dynamics*. **Nature Communications** 15, 277 (2024). [论文](https://www.nature.com/articles/s41467-023-44614-z)；[全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC10766638/)。
-4. Song, Y. et al. *Inferring neural activity before plasticity as a foundation for learning beyond backpropagation*. **Nature Neuroscience** 27, 348–358 (2024). [论文](https://doi.org/10.1038/s41593-023-01514-1)。
-5. Frémaux, N. & Gerstner, W. *Neuromodulated spike-timing-dependent plasticity, and theory of three-factor learning rules*. **Frontiers in Neural Circuits** 9, 85 (2015). [综述](https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2015.00085/full)。
-6. Urbanczik, R. & Senn, W. *Learning by the dendritic prediction of somatic spiking*. **Neuron** 81, 521–528 (2014). [论文](https://pubmed.ncbi.nlm.nih.gov/24507189/)。
-7. Halvagal, M. S. & Zenke, F. *Sequence anticipation and spike-timing-dependent plasticity emerge from a predictive learning rule*. **Nature Communications** 14, 5361 (2023). [论文](https://www.nature.com/articles/s41467-023-40651-w)。
-8. Lei, Z., Gu, W. & Gao, S. *Dendritic Learning for AI: A Survey of Models, Algorithms, Applications, and Future Directions*. **Journal of Artificial Intelligence for Automation** 1, 6 (2026). [综述及 DOI](https://doi.org/10.53941/jaia.2026.100006)。
-9. Gidon, A. et al. *Dendritic action potentials and computation in human layer 2/3 cortical neurons*. **Science** 367, 83–87 (2020). [论文信息](https://pubmed.ncbi.nlm.nih.gov/31896716/)。
-10. Guerguiev, J., Lillicrap, T. P. & Richards, B. A. *Towards deep learning with segregated dendrites*. **eLife** 6, e22901 (2017). [论文](https://elifesciences.org/articles/22901)。
-11. Lv, C. et al. *Dendritic Localized Learning: Toward Biologically Plausible Algorithm*. **Proceedings of the 42nd International Conference on Machine Learning** 267, 41682–41700 (2025). [论文](https://proceedings.mlr.press/v267/lv25c.html)。
+4. Frémaux, N. & Gerstner, W. *Neuromodulated spike-timing-dependent plasticity, and theory of three-factor learning rules*. **Frontiers in Neural Circuits** 9, 85 (2015). [综述](https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2015.00085/full)。
+5. Urbanczik, R. & Senn, W. *Learning by the dendritic prediction of somatic spiking*. **Neuron** 81, 521–528 (2014). [论文](https://pubmed.ncbi.nlm.nih.gov/24507189/)。
+6. Halvagal, M. S. & Zenke, F. *Sequence anticipation and spike-timing-dependent plasticity emerge from a predictive learning rule*. **Nature Communications** 14, 5361 (2023). [论文](https://www.nature.com/articles/s41467-023-40651-w)。
+

@@ -261,49 +261,7 @@ Nature Communications 2023 的一项研究让单个神经元预测未来输入�
 
 这类方法的共同方向是：突触不只记录“前后神经元是否一起发放”，还尝试记录“当前活动是否偏离了一个局部预测”。这使 Hebbian 学习与预测编码、误差驱动学习产生了连接。
 
-### 7.5 前瞻性配置：先调整神经活动，再巩固突触
-
-Song 等人在 *Nature Neuroscience*（2024）提出了一个与反向传播顺序相反的信用分配原则：**先让网络活动进入“学习之后应该出现的状态”，再修改突触权重去巩固这个状态**。作者把它称为前瞻性配置（prospective configuration）。[论文页面](https://doi.org/10.1038/s41593-023-01514-1)
-
-反向传播的顺序可以概括为：
-
-```text
-计算输出误差 → 沿网络反向传播 → 先修改权重 → 下一次活动发生改变
-```
-
-前瞻性配置的顺序则是：
-
-```text
-输入和目标到达 → 网络活动松弛到新的配置 → 用新的局部活动更新权重
-```
-
-![反向传播与前瞻性配置的学习顺序对比](/assets/img/posts/neuro-learning-prospective.svg)
-
-*图 6。反向传播先修改权重，前瞻性配置先让网络活动松弛到新的状态，再用局部预测误差巩固权重。本文根据 Song 等人（2024）的机制示意自绘。*
-
-在预测编码网络中，输入和目标输出被固定，中间神经元通过降低局部能量逐步调整活动。设第 $l$ 层的局部预测误差为：
-
-$$
-\varepsilon^l=x^l-w^{l-1}f(x^{l-1}),
-$$
-
-那么权重更新可以写成：
-
-$$
-\Delta w^l
-=
-\alpha\,\varepsilon^{l+1}\big(f(x^l)\big)^{\mathsf T}.
-$$
-
-这个更新只需要相邻层的突触前活动和局部预测误差。在相应的神经实现中，预测误差由独立的误差单元表示，权重变化具有 Hebbian 形式：一个局部误差因子乘以一个突触前活动因子。因此，它为“预测误差如何进入突触更新”提供了比标准 Hebbian 学习更具体的例子。
-
-这篇论文还比较了深层学习、在线学习、少样本学习、持续学习、变化环境和强化学习等情形。它的核心价值不是证明前瞻性配置已经是大脑唯一的学习方式，而是说明：**局部能量、预测误差和神经活动松弛可以共同承担信用分配，并减少不同输出之间的学习干扰。**
-
-它与本文其他机制的关系可以这样理解：e-prop 用资格迹保存时间信息，前瞻性配置用网络松弛产生新的活动状态，LPL 用局部预测规则学习稳定表征；三者都在尝试减少对全局反向传播的依赖，但解决的是不同的信用分配问题。
-
-需要保留两个限制。第一，论文的主要模型是速率型预测编码网络，而不是 LIF 神经元或 STDP 网络。第二，学习过程需要固定目标并进行多步活动松弛，所以它是局部化的能量学习框架，不是“每个突触只看瞬时脉冲就能完成学习”的纯在线规则。它最适合放在预测性可塑性和树突局部误差之间，作为从“局部活动相关性”走向“局部预测误差”的桥梁。
-
-### 7.6 树突动力学不等于树突学习
+### 7.5 树突动力学不等于树突学习
 
 Zheng 等人的工作把不同时间常数的树突分支加入 SNN，用于处理多时间尺度动态。[论文](https://www.nature.com/articles/s41467-023-44614-z)
 
@@ -313,7 +271,7 @@ Zheng 等人的工作把不同时间常数的树突分支加入 SNN，用于处�
 - 参数更新是否依赖全局反向传播；
 - 运行过程中突触是否继续根据局部活动改变。
 
-### 7.7 树突学习的文献地图：从生物结构到局部更新
+### 7.6 树突学习的文献地图：从生物结构到局部更新
 
 Lei、Gu 和 Gao 在 2026 年发表的综述 *Dendritic Learning for AI: A Survey of Models, Algorithms, Applications, and Future Directions*，把这个方向分成四个层次：神经科学基础、树突启发的网络结构、树突学习规则，以及面向脉冲网络、持续学习和低功耗计算的应用。[综述及 DOI](https://doi.org/10.53941/jaia.2026.100006)
 
@@ -375,7 +333,7 @@ PFC–MD 类模型使用与丘脑调节相关的门控机制，在不同任务�
 
 ![持续学习中，重要的旧任务参数受到巩固约束，其他参数仍可适应新任务](/assets/img/posts/neuro-learning-consolidation.svg)
 
-*图 7。突触巩固的概念示意：旧任务的重要参数更难被新任务覆盖；EWC 用参数重要性加权的惩罚项实现这一思想。本文自绘。*
+*图 6。突触巩固的概念示意：旧任务的重要参数更难被新任务覆盖；EWC 用参数重要性加权的惩罚项实现这一思想。本文自绘。*
 
 ## 9. 果蝇全脑模型和数字生命：从“可运行”走向“可学习”
 
@@ -396,7 +354,7 @@ PFC–MD 类模型使用与丘脑调节相关的门控机制，在不同任务�
 
 ![果蝇数字生命从固定连接组和神经动力学，加入可塑突触与身体环境反馈，形成闭环学习](/assets/img/posts/neuro-learning-digital-fly.svg)
 
-*图 8。从可运行的果蝇回路走向可学习的数字生命，需要把可塑性、调制信号和身体—环境反馈纳入同一闭环。本文自绘。*
+*图 7。从可运行的果蝇回路走向可学习的数字生命，需要把可塑性、调制信号和身体—环境反馈纳入同一闭环。本文自绘。*
 
 ## 10. 几类学习机制放在一起比较
 
@@ -430,7 +388,7 @@ PFC–MD 类模型使用与丘脑调节相关的门控机制，在不同任务�
 
 ## 12. 论文阅读路线：按机制而不是按期刊阅读
 
-如果要把这篇文章继续扩展成论文阅读系列，我建议优先细读下面十篇：
+如果要把这篇文章继续扩展成论文阅读系列，我建议优先细读下面八篇：
 
 1. **Diehl & Cook（2015）**：先搭一个真正使用 STDP、侧向抑制和自适应阈值的 SNN；
 2. **Izhikevich（2007）**：理解资格迹怎样把 STDP 与延迟奖励连接起来；
@@ -439,9 +397,7 @@ PFC–MD 类模型使用与丘脑调节相关的门控机制，在不同任务�
 5. **Miconi et al.（2018）**：理解运行时局部可塑性与离线元学习的结合；
 6. **Zenke & Ganguli（2018）**：理解替代梯度和三因子在线更新；
 7. **Bellec et al.（2020）**：理解 e-prop 如何处理循环网络中的时间信用分配；
-8. **Halvagal & Zenke（2023）**：理解预测性可塑性如何与 Hebbian 学习结合；
-9. **Song et al.（2024）**：理解前瞻性配置如何用局部预测误差完成信用分配；
-10. **Dohare et al.（2024）**：理解持续学习中的可塑性衰退。
+8. **Nature Neuroscience（2023）和 Dohare et al.（2024）**：分别补足预测性塑性与持续学习中的可塑性衰退。
 
 每篇论文可以固定记录五个问题：
 
@@ -466,7 +422,6 @@ PFC–MD 类模型使用与丘脑调节相关的门控机制，在不同任务�
 - [Bellec et al.（2020），A solution to the learning dilemma for recurrent networks of spiking neurons](https://www.nature.com/articles/s41467-020-17236-y)
 - [Sequence anticipation and spike-timing-dependent plasticity emerge from a predictive learning rule（2023）](https://www.nature.com/articles/s41467-023-40651-w)
 - [The combination of Hebbian and predictive plasticity learns invariant object representations（2023）](https://www.nature.com/articles/s41593-023-01460-y)
-- [Song et al.（2024），Inferring neural activity before plasticity as a foundation for learning beyond backpropagation](https://doi.org/10.1038/s41593-023-01514-1)
 - [Zheng et al.（2024），Temporal dendritic heterogeneity incorporated with spiking neural networks](https://www.nature.com/articles/s41467-023-44614-z)
 - [Lei, Gu & Gao（2026），Dendritic Learning for AI: A Survey of Models, Algorithms, Applications, and Future Directions](https://doi.org/10.53941/jaia.2026.100006)
 - [Gidon et al.（2020），Dendritic action potentials and computation in human layer 2/3 cortical neurons](https://pubmed.ncbi.nlm.nih.gov/31896716/)
