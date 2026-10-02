@@ -1,0 +1,333 @@
+% 编译方式：XeLaTeX（建议连续编译两次）
+% 本文件自包含：配图用 TikZ 绘制，无需外部图片或字体文件。
+\documentclass[UTF8,aspectratio=169,10pt,fontset=fandol]{ctexbeamer}
+\usepackage{amsmath,amssymb,booktabs,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{Navy}{HTML}{102A43}
+\definecolor{Coral}{HTML}{E76F51}
+\definecolor{Teal}{HTML}{2A9D8F}
+\definecolor{Blue}{HTML}{457B9D}
+\definecolor{Pale}{HTML}{F5F7FA}
+\definecolor{Muted}{HTML}{52606D}
+\setbeamercolor{normal text}{fg=Navy,bg=white}
+\setbeamercolor{structure}{fg=Blue}
+\setbeamercolor{frametitle}{fg=Navy}
+\setbeamercolor{title}{fg=Navy}
+\setbeamercolor{block title}{fg=white,bg=Blue}
+\setbeamercolor{block body}{fg=Navy,bg=Pale}
+\setbeamercolor{alerted text}{fg=Coral}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{Coral}\small$\bullet$}
+\setbeamertemplate{footline}{%
+  \hspace{0.5cm}\textcolor{Muted}{\scriptsize 神经启发的学习机制}%
+  \hfill\textcolor{Muted}{\scriptsize\insertframenumber/\inserttotalframenumber}%
+  \hspace{0.5cm}\vspace{0.2cm}}
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+\setlength{\parskip}{0.4em}
+\tikzset{
+  flow/.style={draw=Blue,fill=Pale,rounded corners=3pt,align=center,
+    minimum height=0.7cm,text width=2.3cm,font=\small},
+  modulator/.style={flow,draw=Coral,fill=Coral!9},
+  link/.style={-{Stealth[length=2mm]},thick,draw=Blue},
+  smallnote/.style={font=\scriptsize,text=Muted,align=center}
+}
+\newcommand{\source}[1]{\par\vfill{\tiny\color{Muted}来源：#1}}
+\newcommand{\paper}[2]{\href{#1}{#2}}
+
+\title{神经启发的学习机制}
+\subtitle{从局部突触可塑性到持续学习}
+\author{学习记录}
+\date{}
+
+\begin{document}
+
+% 01 封面
+\begin{frame}[plain]
+  \vspace{0.8cm}
+  {\color{Coral}\rule{1.1cm}{3pt}}\par
+  {\usebeamerfont{title}\inserttitle\par}
+  \vspace{0.4cm}
+  {\large\insertsubtitle\par}
+  \vspace{1cm}
+  {\color{Blue}局部可塑性\quad 资格迹\quad 神经调质\quad 树突计算\quad 记忆巩固}
+  \vfill
+  {\small 学习记录：神经机制启发人工神经网络的参数更新}\par
+  {\scriptsize\color{Muted}基于博客文章 2026-10-05-neuro-inspired-learning.md}
+\end{frame}
+
+% 02 问题框架
+\begin{frame}{学习机制与网络动力学}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.54\textwidth}
+      \textbf{网络怎样运行}\par
+      脉冲神经元、LIF、树突分支和连接组约束。
+      \medskip
+
+      \textbf{网络怎样改变}\par
+      局部可塑性、奖励调制、资格迹和突触巩固。
+      \medskip
+
+      \alert{反向传播的生物实现难点}
+      \begin{itemize}
+        \item 远处误差怎样到达局部突触？
+        \item 时间展开需要保存活动历史。
+        \item 精确的前向、反馈权重对应关系。
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[node distance=0.35cm]
+        \node[flow] (a) {局部活动\\产生候选改变};
+        \node[flow,below=of a] (e) {资格迹\\保存活动历史};
+        \node[modulator,below=of e] (m) {调制或误差信号\\筛选突触更新};
+        \node[flow,below=of m] (c) {巩固\\决定保持多久};
+        \draw[link] (a)--(e);
+        \draw[link] (e)--(m);
+        \draw[link] (m)--(c);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \source{原文第 1 节。使用脉冲神经元与采用局部学习规则是不同的设计选择。}
+\end{frame}
+
+% 03 Hebbian 与 STDP
+\begin{frame}{局部可塑性：相关性与时间顺序}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \textbf{Hebbian learning}
+      \[
+        \Delta w_{ij}=\eta x_i y_j
+      \]
+      只使用突触两端活动。需要稳态、归一化或抑制约束，防止权重失控。
+      \medskip
+
+      \textbf{STDP：脉冲时间依赖可塑性}
+      \[
+      \Delta w=\begin{cases}
+        A_+e^{-\Delta t/\tau_+}, & \Delta t>0,\\
+        -A_-e^{\Delta t/\tau_-}, & \Delta t<0.
+      \end{cases}
+      \]
+      {\small $\Delta t=t_{\mathrm{post}}-t_{\mathrm{pre}}$。典型窗口因回路和状态而异。}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.7cm,y=1cm]
+        \draw[link] (-3,0)--(3.25,0) node[below] {$\Delta t$};
+        \draw[link] (0,-1.6)--(0,1.8) node[above] {$\Delta w$};
+        \draw[Blue,very thick,domain=-3:-0.04,samples=60] plot(\x,{-1.35*exp(\x)});
+        \draw[Coral,very thick,domain=0.04:3,samples=60] plot(\x,{1.35*exp(-\x)});
+        \node[smallnote] at (1.65,1.2) {前脉冲先到\\典型增强};
+        \node[smallnote] at (-1.65,-1.2) {后脉冲先到\\典型减弱};
+      \end{tikzpicture}
+      \medskip
+
+      \alert{局限：相关性本身不提供任务目标，也难以处理延迟奖励。}
+    \end{column}
+  \end{columns}
+  \source{原文第 2 节。曲线为典型 STDP 模型的概念示意。}
+\end{frame}
+
+% 04 三因子与资格迹
+\begin{frame}{三因子规则与资格迹}
+  \[
+    \Delta w_{ij}(t)=\eta\,M(t)\,e_{ij}(t),
+    \qquad
+    \tau_e\frac{de_{ij}}{dt}=-e_{ij}+f(x_i,y_j)
+  \]
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item $e_{ij}$：由前、后活动形成的局部资格迹。
+        \item $M$：奖励、预测误差或神经调质信号。
+        \item 资格迹把过去的局部活动与延迟结果联系起来。
+      \end{itemize}
+      \medskip
+      \alert{信号的符号、作用范围和时间常数，依赖具体规则与生物机制。}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.9cm,y=1.35cm]
+        \draw[link] (0,0)--(4.9,0) node[below] {时间};
+        \draw[link] (0,0)--(0,1.65) node[above] {$e$};
+        \draw[Blue,very thick,domain=0:4.4,samples=50] plot(\x,{1.35*exp(-0.5*\x)});
+        \draw[Coral,thick,dashed] (2.8,0)--(2.8,1.45);
+        \fill[Coral] (2.8,{1.35*exp(-1.4)}) circle(2pt);
+        \node[smallnote,above] at (2.8,1.45) {延迟奖励};
+        \node[smallnote,below] at (0,-0.15) {局部活动};
+        \node[smallnote] at (2.3,-0.7) {迹线尚未消失时\\奖励可以调制更新};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \source{Frémaux \& Gerstner (2015), \paper{https://doi.org/10.3389/fncir.2015.00085}{Frontiers in Neural Circuits}。时间长度仅为概念示意。}
+\end{frame}
+
+% 05 e-prop
+\begin{frame}{e-prop：资格迹与学习信号的分工}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      \textbf{在线计算局部迹线}
+      \begin{itemize}
+        \item 资格迹来自局部神经活动和动力学。
+        \item 神经元接收输出误差或奖励相关学习信号。
+        \item 两者结合，近似循环脉冲网络的梯度更新。
+      \end{itemize}
+      \[
+        \Delta w_{ij}\approx-\eta\sum_t L_j(t)e_{ij}(t)
+      \]
+      {\small 此处 $L_j$ 采用损失导数的符号约定，因此梯度下降带负号。}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[node distance=0.45cm]
+        \node[flow] (e) {资格迹 $e_{ij}(t)$\\局部在线计算};
+        \node[modulator,below=of e] (l) {学习信号 $L_j(t)$\\误差或奖励反馈};
+        \node[flow,below=of l] (w) {权重更新\\沿时间累积乘积};
+        \draw[link] (e.east)--++(0.35,0)|-(w.east);
+        \draw[link] (l)--(w);
+      \end{tikzpicture}
+      \medskip
+
+      {\small\alert{局部迹线与近似反馈降低实现负担。学习信号的来源仍是核心问题。}}
+    \end{column}
+  \end{columns}
+  \source{Bellec et al. (2020), \paper{https://www.nature.com/articles/s41467-020-17236-y}{Nature Communications}。理想梯度分解与可实现的近似学习信号需要区分。}
+\end{frame}
+
+% 06 树突
+\begin{frame}{树突计算与局部误差信号}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      人工神经元常用一次加权求和：
+      \[
+        y=\phi\!\left(\sum_iw_ix_i+b\right).
+      \]
+      \textbf{分离树突模型的候选机制}
+      \begin{itemize}
+        \item 基底树突接收前馈输入。
+        \item 顶端树突接收反馈或目标信号。
+        \item 分支电位与胞体状态产生局部学习信息。
+      \end{itemize}
+      \alert{树突参与计算具有实验依据。具体误差算法的生物实现仍需验证。}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[node distance=0.7cm]
+        \node[modulator] (top) {反馈或目标\\顶端树突};
+        \node[draw=Teal,fill=Teal!10,circle,minimum size=1cm,below=of top] (soma) {胞体};
+        \node[flow,below=of soma] (bottom) {前馈输入\\基底树突};
+        \draw[link] (top)--(soma);
+        \draw[link] (bottom)--(soma);
+        \node[smallnote,right=0.25cm of soma,text width=1.3cm] {局部比较\\影响可塑性};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \source{Guerguiev et al. (2017), \paper{https://elifesciences.org/articles/22901}{eLife}。Zheng et al. (2024) 的树突时间异质性模型仍用反向传播训练，应归入动力学设计讨论。}
+\end{frame}
+
+% 07 持续学习
+\begin{frame}{持续学习：突触稳定性与新任务适应}
+  \textbf{EWC：提高重要参数的改变代价}
+  \[
+    \mathcal L(\theta)=\mathcal L_B(\theta)
+      +\frac{\lambda}{2}\sum_iF_i(\theta_i-\theta^*_{A,i})^2
+  \]
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \item $\theta_A^*$：旧任务参数。
+        \item $F_i$：旧任务的参数重要性估计。
+        \item $\lambda$：巩固约束强度。
+      \end{itemize}
+      重要参数更稳定，其余参数保留适应空间。
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{生物启发的相关方向}
+      \begin{itemize}
+        \item 突触巩固与多个记忆时间尺度。
+        \item 元可塑性：更新阈值也随经验改变。
+        \item 结构可塑性：为新知识提供回路容量。
+      \end{itemize}
+      \alert{EWC 是工程方法，并非完整的生物突触模拟。}
+    \end{column}
+  \end{columns}
+  \source{Kirkpatrick et al. (2017), \paper{https://doi.org/10.1073/pnas.1611835114}{PNAS}；原文第 7 节。}
+\end{frame}
+
+% 08 数字生命
+\begin{frame}{果蝇模型与数字生命中的学习闭环}
+  \centering
+  \begin{tikzpicture}[node distance=0.5cm]
+    \node[flow,text width=1.8cm] (env) {环境\\气味、奖励};
+    \node[flow,text width=1.8cm,right=of env] (sense) {感觉输入};
+    \node[flow,text width=2.1cm,right=of sense] (brain) {连接组回路\\动力学与可塑性};
+    \node[flow,text width=1.8cm,right=of brain] (body) {身体动作};
+    \draw[link] (env)--(sense);
+    \draw[link] (sense)--(brain);
+    \draw[link] (brain)--(body);
+    \draw[link] (body.south)--++(0,-0.5)-|(env.south);
+    \node[modulator,below=1.2cm of brain,text width=3.2cm] (reward) {奖励、预测误差或神经调质};
+    \draw[link,Coral,dashed] (reward)--(brain);
+  \end{tikzpicture}
+  \vspace{0.35cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \textbf{结构与动力学}
+      \begin{itemize}
+        \item 连接组约束信号传播路径。
+        \item 神经动力学形成感觉、运动响应。
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{学习还需要}
+      可塑突触、局部活动记录、调制信号，以及动作改变环境的闭环。
+    \end{column}
+  \end{columns}
+  \source{Shiu et al. (2024), \paper{https://www.nature.com/articles/s41586-024-07763-9}{Nature}；Lappalainen et al. (2024), \paper{https://www.nature.com/articles/s41586-024-07939-3}{Nature}。图为概念框架，不是上述模型已实现的完整学习机制。}
+\end{frame}
+
+% 09 比较表
+\begin{frame}{不同机制在信用分配中的分工}
+  \renewcommand{\arraystretch}{1.7}
+  \small
+  \begin{tabular}{p{2.7cm}p{4.4cm}p{5cm}}
+    \toprule
+    \textbf{机制} & \textbf{主要信息} & \textbf{作用与边界}\\
+    \midrule
+    Hebbian / STDP & 前后活动与脉冲时序 & 局部相关性，缺少任务目标\\
+    三因子规则 & 局部资格迹与调制信号 & 筛选更新，需要解释信号来源\\
+    资格迹 / e-prop & 局部历史与学习信号 & 时间信用分配，依赖迹线与反馈质量\\
+    树突局部误差 & 前馈、反馈和分支电位 & 提供局部目标，生物实现尚未统一\\
+    巩固 / 元可塑性 & 参数重要性与可塑性状态 & 保护旧知识，平衡稳定性和适应性\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+
+  \normalsize\alert{这些机制可以组合。是否局部、是否在线、能记住多久，需要分别判断。}
+  \source{原文第 9 节。EWC 的经典实现依赖任务损失及参数重要性估计，不宜直接称为纯局部生物学习规则。}
+\end{frame}
+
+% 10 结论
+\begin{frame}{核心理解与后续阅读问题}
+  \begin{block}{信用分配链}
+    局部活动产生候选改变，资格迹保存活动历史，调制信号筛选更新，
+    树突与反馈提供局部目标，巩固机制决定改变保持多久。
+  \end{block}
+  \medskip
+  \textbf{阅读新论文时，追问四个问题}
+  \begin{enumerate}
+    \item 生物机制是什么？
+    \item 更新信号在哪里产生？
+    \item 更新是否局部，是否需要全局梯度？
+    \item 模型能否在运行过程中根据经验继续学习？
+  \end{enumerate}
+  \medskip
+  {\small 后续重点：局部更新的实验依据、学习性能与生物合理性的权衡、
+  多时间尺度巩固，以及果蝇蘑菇体的学习回路。}
+  \source{原文第 10--11 节。本演示按文章初稿整理，理论算法、模型假设与实验事实应分开理解。}
+\end{frame}
+
+\end{document}
