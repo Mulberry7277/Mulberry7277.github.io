@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">BPTT 与 e-prop 的时间信用分配</title>
+  <desc id="desc">BPTT 沿时间反向传播并保存历史状态，e-prop 沿时间正向维护资格迹并在当前时刻接收学习信号。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.thin{fill:none;stroke:#9aabc0;stroke-width:2;stroke-dasharray:7 7}</style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+    <marker id="orange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#d9794b"/></marker>
+  </defs>
+  <rect width="1100" height="560" rx="25" fill="#f8fafc"/>
+  <text x="550" y="55" text-anchor="middle" class="t h">BPTT 与 e-prop：两种时间信用分配方向</text>
+  <rect x="45" y="91" width="485" height="400" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="287" y="132" text-anchor="middle" class="t l">BPTT：把网络展开后向过去传播</text>
+  <line x1="115" y1="240" x2="457" y2="240" class="thin"/>
+  <circle cx="145" cy="240" r="26" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="285" cy="240" r="26" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="425" cy="240" r="26" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/>
+  <text x="145" y="247" text-anchor="middle" class="t s">t−2</text><text x="285" y="247" text-anchor="middle" class="t s">t−1</text><text x="425" y="247" text-anchor="middle" class="t s">t</text>
+  <path d="M398 190 C335 155 250 155 172 190" class="arr" stroke="#d9794b" marker-end="url(#orange)"/>
+  <path d="M404 303 C338 337 250 337 169 303" class="arr" stroke="#d9794b" marker-end="url(#orange)"/>
+  <text x="286" y="177" text-anchor="middle" class="t s" fill="#d9794b">误差梯度沿时间反向传递</text>
+  <rect x="103" y="370" width="368" height="70" rx="15" fill="#fff0df" stroke="#e5b174" stroke-width="2"/>
+  <text x="287" y="400" text-anchor="middle" class="t l">保存所有中间状态</text>
+  <text x="287" y="427" text-anchor="middle" class="t s">训练结束后统一计算，在线性差分芯片上开销大</text>
+  <rect x="570" y="91" width="485" height="400" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="812" y="132" text-anchor="middle" class="t l">e-prop：向未来维护资格迹</text>
+  <line x1="640" y1="240" x2="982" y2="240" class="thin"/>
+  <circle cx="670" cy="240" r="26" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="810" cy="240" r="26" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <circle cx="950" cy="240" r="26" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/>
+  <text x="670" y="247" text-anchor="middle" class="t s">t−2</text><text x="810" y="247" text-anchor="middle" class="t s">t−1</text><text x="950" y="247" text-anchor="middle" class="t s">t</text>
+  <path d="M698 240 L780 240 M838 240 L920 240" class="arr" marker-end="url(#arrow)"/>
+  <path d="M670 305 C735 354 836 354 950 305" class="arr" stroke="#357fb7" marker-end="url(#arrow)"/>
+  <text x="812" y="375" text-anchor="middle" class="t s" fill="#357fb7">局部活动留下 e(t)，当前 L(t) 到来即可更新</text>
+  <rect x="628" y="401" width="368" height="70" rx="15" fill="#e5f4eb" stroke="#83bd9b" stroke-width="2"/>
+  <text x="812" y="431" text-anchor="middle" class="t l">在线更新每个突触</text>
+  <text x="812" y="458" text-anchor="middle" class="t s">计算量随突触数增长，不必保存完整时间展开</text>
+</svg>
