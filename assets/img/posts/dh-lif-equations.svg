@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="530" viewBox="0 0 1120 530" role="img" aria-labelledby="title desc">
+  <title id="title">DH-LIF 的离散动力学</title>
+  <desc id="desc">树突电流以 αd 衰减并接收输入，胞体以 β 衰减并整合所有树突电流，发放后进行重置。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="530" rx="25" fill="#f8fafc"/>
+  <text x="560" y="55" text-anchor="middle" class="t h">DH-LIF 的两个递归状态</text>
+  <rect x="50" y="105" width="430" height="290" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="265" y="147" text-anchor="middle" class="t l">第 d 个树突分支</text>
+  <text x="265" y="205" text-anchor="middle" class="t l">iᵈ(t+1) = αᵈ iᵈ(t)</text>
+  <text x="265" y="246" text-anchor="middle" class="t l">+ (1−αᵈ) Iᵈ(t+1)</text>
+  <text x="265" y="304" text-anchor="middle" class="t s">αᵈ 越大，历史输入衰减越慢</text><text x="265" y="336" text-anchor="middle" class="t s">Iᵈ 来自该分支的突触输入</text>
+  <path d="M480 250 L570 250" class="arr" marker-end="url(#a)"/>
+  <rect x="590" y="105" width="480" height="290" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="830" y="147" text-anchor="middle" class="t l">胞体与发放</text>
+  <text x="830" y="205" text-anchor="middle" class="t l">u(t+1) = βu(t)</text>
+  <text x="830" y="246" text-anchor="middle" class="t l">+ (1−β)R Σᵈ iᵈ(t+1)</text>
+  <text x="830" y="287" text-anchor="middle" class="t l">− o(t)uₜₕ</text>
+  <text x="830" y="340" text-anchor="middle" class="t s">o(t+1) = H(u(t+1)−uₜₕ)</text>
+  <text x="560" y="470" text-anchor="middle" class="t s">树突状态不因胞体脉冲重置而被清空，因此能保存更长时间的信息</text>
+</svg>

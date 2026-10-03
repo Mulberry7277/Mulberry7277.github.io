@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="540" viewBox="0 0 1120 540" role="img" aria-labelledby="title desc">
+  <title id="title">DH-SNN 的稀疏连接与 TianjicX 部署</title>
+  <desc id="desc">不同树突分支只连接输入的一部分，保持突触总量近似不变，并通过分组和流水调度映射到 TianjicX 芯片。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="540" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">稀疏树突连接让多分支模型保持紧凑</text>
+  <rect x="45" y="105" width="330" height="315" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="210" y="147" text-anchor="middle" class="t l">输入被分配到分支</text>
+  <circle cx="105" cy="230" r="17" fill="#deedfd"/><circle cx="105" cy="300" r="17" fill="#deedfd"/><circle cx="105" cy="370" r="17" fill="#deedfd"/>
+  <circle cx="265" cy="210" r="23" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="265" cy="275" r="23" fill="#fff0df" stroke="#e5b174" stroke-width="3"/><circle cx="265" cy="340" r="23" fill="#fcebe7" stroke="#dfaa9b" stroke-width="3"/>
+  <path d="M122 230 L242 210 M122 300 L242 275 M122 370 L242 340" class="arr" marker-end="url(#a)"/>
+  <text x="210" y="400" text-anchor="middle" class="t s">每个分支约接收 1/D 的输入</text>
+  <path d="M375 260 L450 260" class="arr" marker-end="url(#a)"/>
+  <rect x="465" y="105" width="280" height="315" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="605" y="147" text-anchor="middle" class="t l">参数与计算量</text>
+  <text x="605" y="210" text-anchor="middle" class="t s">树突分支数 ↑</text><text x="605" y="242" text-anchor="middle" class="t s">单分支突触数 ↓</text><text x="605" y="274" text-anchor="middle" class="t s">总突触量近似不变</text>
+  <path d="M530 330 L680 330" stroke="#357fb7" stroke-width="5"/><path d="M530 350 L680 350" stroke="#357fb7" stroke-width="5"/><path d="M530 370 L680 370" stroke="#357fb7" stroke-width="5"/>
+  <text x="605" y="400" text-anchor="middle" class="t s">适合事件驱动硬件</text>
+  <path d="M745 260 L820 260" class="arr" marker-end="url(#a)"/>
+  <rect x="835" y="105" width="240" height="315" rx="22" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="955" y="147" text-anchor="middle" class="t l">TianjicX</text>
+  <rect x="870" y="190" width="170" height="110" rx="12" fill="#d9efe3" stroke="#79b493" stroke-width="2"/>
+  <path d="M885 215 L1025 215 M885 245 L1025 245 M885 275 L1025 275" stroke="#4e9b75" stroke-width="3"/>
+  <text x="955" y="345" text-anchor="middle" class="t s">分组 + 多时间相位</text><text x="955" y="375" text-anchor="middle" class="t s">流水执行 DH-SNN</text>
+  <text x="560" y="478" text-anchor="middle" class="t s">论文在 TianjicX 上验证了混合脉冲 / 非脉冲树突动力学的部署可行性</text>
+</svg>

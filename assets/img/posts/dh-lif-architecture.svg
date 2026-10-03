@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">DH-LIF 的多分支时间记忆</title>
+  <desc id="desc">DH-LIF 神经元将输入分配到具有不同衰减因子的树突分支，再在胞体整合分支电流并发放脉冲。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">DH-LIF：一个神经元中的多时间尺度记忆</text>
+  <rect x="45" y="105" width="225" height="310" rx="20" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/>
+  <text x="157" y="148" text-anchor="middle" class="t l">输入脉冲</text>
+  <path d="M95 215 L95 350 M145 215 L145 350 M195 215 L195 350" stroke="#357fb7" stroke-width="5" stroke-dasharray="3 10"/>
+  <text x="157" y="191" text-anchor="middle" class="t s">快变化 / 慢变化</text><text x="157" y="383" text-anchor="middle" class="t s">按稀疏规则分支</text>
+  <path d="M270 260 L340 260" class="arr" marker-end="url(#a)"/>
+  <rect x="355" y="92" width="400" height="355" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="555" y="133" text-anchor="middle" class="t l">树突分支：各自保存一个时间尺度</text>
+  <rect x="400" y="170" width="132" height="80" rx="16" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="466" y="204" text-anchor="middle" class="t l">Branch 1</text><text x="466" y="232" text-anchor="middle" class="t s">α₁ 小：快</text>
+  <rect x="578" y="170" width="132" height="80" rx="16" fill="#fff0df" stroke="#e5b174" stroke-width="2"/>
+  <text x="644" y="204" text-anchor="middle" class="t l">Branch 2</text><text x="644" y="232" text-anchor="middle" class="t s">α₂ 大：慢</text>
+  <path d="M466 250 L500 330 M644 250 L610 330" class="arr" marker-end="url(#a)"/>
+  <rect x="475" y="330" width="160" height="70" rx="16" fill="#fcebe7" stroke="#dfaa9b" stroke-width="2"/>
+  <text x="555" y="360" text-anchor="middle" class="t l">胞体 Σ</text><text x="555" y="385" text-anchor="middle" class="t s">整合后发放</text>
+  <path d="M755 260 L830 260" class="arr" marker-end="url(#a)"/>
+  <rect x="845" y="150" width="230" height="225" rx="20" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="960" y="193" text-anchor="middle" class="t l">胞体动力学</text>
+  <path d="M885 315 C910 260 928 330 950 240 C973 155 1007 270 1038 205" fill="none" stroke="#357fb7" stroke-width="5"/>
+  <line x1="880" y1="325" x2="1045" y2="325" stroke="#9aabc0" stroke-width="2"/>
+  <text x="960" y="355" text-anchor="middle" class="t s">膜电位超过阈值 → spike</text>
+  <text x="560" y="500" text-anchor="middle" class="t s">每个 αᵈ 通过学习自动调整，形成异质的树突时间记忆</text>
+</svg>

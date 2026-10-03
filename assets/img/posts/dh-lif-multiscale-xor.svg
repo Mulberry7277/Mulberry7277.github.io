@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="570" viewBox="0 0 1120 570" role="img" aria-labelledby="title desc">
+  <title id="title">DH-LIF 的多时间尺度特征整合</title>
+  <desc id="desc">慢信号由长时间常数树突分支保留，快信号由短时间常数分支追踪，胞体把两者组合后计算 XOR。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="570" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">多时间尺度 XOR：慢记忆与快变化同时参与决策</text>
+  <rect x="40" y="110" width="250" height="320" rx="20" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/>
+  <text x="165" y="153" text-anchor="middle" class="t l">输入 Signal 1</text><text x="165" y="184" text-anchor="middle" class="t s">慢变化 / 低频</text>
+  <path d="M75 315 C105 265 125 350 150 275 C175 205 200 330 250 250" fill="none" stroke="#357fb7" stroke-width="5"/>
+  <text x="165" y="375" text-anchor="middle" class="t s">Branch 1：α 大</text><text x="165" y="405" text-anchor="middle" class="t s">保留早期信息</text>
+  <path d="M290 265 L370 265" class="arr" marker-end="url(#a)"/>
+  <rect x="390" y="90" width="340" height="370" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="560" y="133" text-anchor="middle" class="t l">DH-LIF 神经元</text>
+  <rect x="430" y="175" width="125" height="85" rx="16" fill="#fff0df" stroke="#e5b174" stroke-width="2"/><text x="492" y="211" text-anchor="middle" class="t l">慢分支</text><text x="492" y="240" text-anchor="middle" class="t s">记住 Signal 1</text>
+  <rect x="565" y="295" width="125" height="85" rx="16" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/><text x="627" y="331" text-anchor="middle" class="t l">快分支</text><text x="627" y="360" text-anchor="middle" class="t s">追踪 Signal 2</text>
+  <path d="M492 260 L540 330 M627 295 L580 260" class="arr" marker-end="url(#a)"/>
+  <circle cx="560" cy="260" r="32" fill="#fcebe7" stroke="#dfaa9b" stroke-width="3"/><text x="560" y="270" text-anchor="middle" class="t l">Σ</text>
+  <path d="M730 265 L815 265" class="arr" marker-end="url(#a)"/>
+  <rect x="835" y="110" width="245" height="320" rx="20" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="957" y="153" text-anchor="middle" class="t l">输入 Signal 2</text><text x="957" y="184" text-anchor="middle" class="t s">快变化 / 高频</text>
+  <path d="M865 310 L895 245 L925 310 L955 245 L985 310 L1015 245 L1045 310" fill="none" stroke="#d9794b" stroke-width="5"/>
+  <text x="957" y="375" text-anchor="middle" class="t s">快慢信息整合</text><text x="957" y="405" text-anchor="middle" class="t s">→ 输出 XOR 结果</text>
+  <text x="560" y="510" text-anchor="middle" class="t s">单分支只能偏向一个时间尺度；多分支让同一神经元同时保留和追踪不同节奏</text>
+</svg>
