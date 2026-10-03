@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">LPL 如何避免表征坍塌</title>
+  <desc id="desc">预测性学习把相邻时刻的表征拉近，Hebbian 方差项保持活动，去相关项避免神经元学到相同方向。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="520" rx="25" fill="#f8fafc"/>
+  <text x="560" y="55" text-anchor="middle" class="t h">LPL：拉近可预测输入，同时阻止坍塌</text>
+  <rect x="45" y="100" width="315" height="330" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="202" y="143" text-anchor="middle" class="t l">预测性可塑性</text>
+  <circle cx="115" cy="230" r="22" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/><circle cx="255" cy="290" r="22" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/>
+  <path d="M137 239 C170 260 199 272 233 281" class="arr" stroke="#357fb7" marker-end="url(#a)"/>
+  <text x="202" y="207" text-anchor="middle" class="t s" fill="#357fb7">相邻时刻的表征</text>
+  <text x="202" y="350" text-anchor="middle" class="t s">学习慢变化、可预测的特征</text>
+  <rect x="402" y="100" width="315" height="330" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="559" y="143" text-anchor="middle" class="t l">Hebbian 方差项</text>
+  <path d="M475 337 L475 210 L650 210" class="arr" marker-end="url(#a)"/>
+  <path d="M490 322 C535 305 548 275 588 268 C626 261 637 226 670 220" fill="none" stroke="#d9794b" stroke-width="5"/>
+  <text x="559" y="375" text-anchor="middle" class="t s" fill="#d9794b">维持输出方差，避免活动归零</text>
+  <text x="559" y="405" text-anchor="middle" class="t s">但单独使用时容易偏向高方差方向</text>
+  <rect x="760" y="100" width="315" height="330" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="917" y="143" text-anchor="middle" class="t l">神经元间去相关</text>
+  <circle cx="850" cy="245" r="23" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="980" cy="245" r="23" fill="#fff0df" stroke="#e5b174" stroke-width="3"/>
+  <path d="M873 245 L957 245" class="arr" stroke="#d9794b" marker-end="url(#a)"/>
+  <text x="917" y="207" text-anchor="middle" class="t s" fill="#d9794b">抑制重复表示</text>
+  <text x="917" y="350" text-anchor="middle" class="t s">让不同神经元编码不同方向</text>
+  <text x="917" y="380" text-anchor="middle" class="t s">SNN 中由侧向抑制和抑制性可塑性实现</text>
+  <text x="560" y="477" text-anchor="middle" class="t s">三者共同作用：可预测、保持活性、保留表示维度</text>
+</svg>

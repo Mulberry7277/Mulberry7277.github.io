@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">LPL 的局部突触更新规则</title>
+  <desc id="desc">突触前活动、后突触活动变化、滑动平均和方差共同决定预测项与 Hebbian 项，形成局部权重更新。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">LPL：在突触局部组合预测项与 Hebbian 项</text>
+  <rect x="45" y="100" width="260" height="110" rx="19" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/>
+  <text x="175" y="143" text-anchor="middle" class="t l">突触前活动</text><text x="175" y="178" text-anchor="middle" class="t s">xⱼ(t)</text>
+  <rect x="45" y="280" width="260" height="110" rx="19" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="175" y="323" text-anchor="middle" class="t l">后突触状态</text><text x="175" y="358" text-anchor="middle" class="t s">z(t), f′(a(t))</text>
+  <path d="M305 155 L390 155" class="arr" marker-end="url(#a)"/><path d="M305 335 L390 335" class="arr" marker-end="url(#a)"/>
+  <rect x="400" y="100" width="300" height="110" rx="19" fill="#fff0df" stroke="#e5b174" stroke-width="2"/>
+  <text x="550" y="143" text-anchor="middle" class="t l">预测项</text><text x="550" y="178" text-anchor="middle" class="t s">− dz(t)/dt</text>
+  <rect x="400" y="280" width="300" height="110" rx="19" fill="#fcebe7" stroke="#dfaa9b" stroke-width="2"/>
+  <text x="550" y="323" text-anchor="middle" class="t l">Hebbian 项</text><text x="550" y="358" text-anchor="middle" class="t s">λ[z(t)−z̄(t)]/σ²z(t)</text>
+  <path d="M550 210 L550 270" class="arr" marker-end="url(#a)"/><path d="M700 155 L778 235" class="arr" marker-end="url(#a)"/><path d="M700 335 L778 255" class="arr" marker-end="url(#a)"/>
+  <circle cx="810" cy="245" r="34" fill="#fff" stroke="#d98e72" stroke-width="3"/><text x="810" y="257" text-anchor="middle" class="t h">+</text>
+  <path d="M845 245 L920 245" class="arr" marker-end="url(#a)"/>
+  <rect x="925" y="190" width="150" height="110" rx="18" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="1000" y="232" text-anchor="middle" class="t l">Δwⱼ</text><text x="1000" y="268" text-anchor="middle" class="t s">局部更新</text>
+  <rect x="350" y="445" width="420" height="63" rx="15" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="560" y="484" text-anchor="middle" class="t s">σ²z 与 z̄ 是在线估计的历史活动统计量</text>
+</svg>

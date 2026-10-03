@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">层局部 LPL 学习深层表征</title>
+  <desc id="desc">相邻图像增强视图输入到卷积网络，每层独立预测局部表征，深层表示逐渐变得线性可分。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">层局部 LPL：不依赖标签的深层表征学习</text>
+  <rect x="55" y="150" width="160" height="120" rx="18" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/>
+  <text x="135" y="195" text-anchor="middle" class="t l">连续视觉输入</text><text x="135" y="230" text-anchor="middle" class="t s">同一物体的相邻视图</text>
+  <path d="M215 210 L285 210" class="arr" marker-end="url(#a)"/>
+  <rect x="300" y="115" width="140" height="190" rx="18" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="370" y="160" text-anchor="middle" class="t l">层 1</text><text x="370" y="200" text-anchor="middle" class="t s">局部预测</text><text x="370" y="237" text-anchor="middle" class="t s">Hebbian</text><text x="370" y="270" text-anchor="middle" class="t s">去相关</text>
+  <path d="M440 210 L500 210" class="arr" marker-end="url(#a)"/>
+  <rect x="515" y="115" width="140" height="190" rx="18" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="585" y="160" text-anchor="middle" class="t l">层 2</text><text x="585" y="200" text-anchor="middle" class="t s">局部预测</text><text x="585" y="237" text-anchor="middle" class="t s">Hebbian</text><text x="585" y="270" text-anchor="middle" class="t s">去相关</text>
+  <path d="M655 210 L715 210" class="arr" marker-end="url(#a)"/>
+  <rect x="730" y="115" width="140" height="190" rx="18" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="800" y="160" text-anchor="middle" class="t l">深层</text><text x="800" y="200" text-anchor="middle" class="t s">对象身份</text><text x="800" y="237" text-anchor="middle" class="t s">线性可分</text><text x="800" y="270" text-anchor="middle" class="t s">不变表征</text>
+  <path d="M870 210 L945 210" class="arr" marker-end="url(#a)"/>
+  <rect x="950" y="155" width="120" height="110" rx="18" fill="#fff0df" stroke="#e5b174" stroke-width="2"/>
+  <text x="1010" y="200" text-anchor="middle" class="t l">线性读出</text><text x="1010" y="235" text-anchor="middle" class="t s">猫 / 狗</text>
+  <path d="M370 330 C500 390 670 390 800 330" class="arr" stroke="#d9794b" marker-end="url(#a)"/>
+  <text x="585" y="405" text-anchor="middle" class="t s" fill="#d9794b">各层只使用本层输入与相邻时间的表征，不把损失反向传过层</text>
+  <text x="560" y="482" text-anchor="middle" class="t s">端到端 LPL 可提高性能，但层局部版本更接近局部可塑性设定</text>
+</svg>

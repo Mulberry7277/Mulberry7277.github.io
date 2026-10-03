@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">脉冲网络中的 LPL 与抑制性可塑性</title>
+  <desc id="desc">兴奋性与抑制性神经元组成循环脉冲网络，慢变化输入通过局部 LPL 被选择性表示，抑制维持活动维度。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">SNN 中的 LPL：预测性输入与抑制性去相关</text>
+  <rect x="45" y="115" width="230" height="280" rx="21" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/>
+  <text x="160" y="157" text-anchor="middle" class="t l">输入群体</text>
+  <path d="M95 215 L95 360 M145 215 L145 360 M195 215 L195 360" stroke="#75a7d8" stroke-width="4" stroke-dasharray="5 8"/>
+  <text x="160" y="190" text-anchor="middle" class="t s">P1 / P2：慢变化信号</text><text x="160" y="385" text-anchor="middle" class="t s">Pctl：打乱的控制信号</text>
+  <path d="M275 255 L350 255" class="arr" marker-end="url(#a)"/>
+  <rect x="365" y="95" width="390" height="330" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="560" y="137" text-anchor="middle" class="t l">循环脉冲网络</text>
+  <circle cx="500" cy="245" r="35" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="620" cy="205" r="35" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="650" cy="315" r="35" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="470" cy="340" r="28" fill="#e9e5f7" stroke="#9b89c8" stroke-width="3"/>
+  <path d="M532 233 L589 214 M644 238 L651 280 M619 340 L525 267 M475 312 L490 277" class="arr" marker-end="url(#a)"/>
+  <text x="560" y="405" text-anchor="middle" class="t s">100 个兴奋性 + 25 个抑制性神经元</text>
+  <path d="M755 255 L830 255" class="arr" marker-end="url(#a)"/>
+  <rect x="845" y="115" width="230" height="280" rx="21" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/>
+  <text x="960" y="157" text-anchor="middle" class="t l">学习后的活动</text>
+  <path d="M890 335 C920 280 947 350 975 250 C1005 150 1025 250 1040 190" fill="none" stroke="#357fb7" stroke-width="5"/>
+  <text x="960" y="355" text-anchor="middle" class="t s">慢信号可线性解码</text><text x="960" y="385" text-anchor="middle" class="t s">抑制避免维度坍塌</text>
+  <text x="560" y="485" text-anchor="middle" class="t s">移除 Hebbian 项会使活动归零；移除抑制会使相关性升高、表示维度下降</text>
+</svg>
