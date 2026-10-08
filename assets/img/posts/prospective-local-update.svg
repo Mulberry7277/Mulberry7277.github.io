@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">预测编码网络中的前瞻性配置更新</title>
+  <desc id="desc">输入和目标被固定，神经活动通过局部预测误差松弛到目标相关状态，随后每个局部能量项驱动权重更新。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">前瞻性配置的两阶段算法</text>
+  <rect x="45" y="105" width="470" height="335" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="280" y="147" text-anchor="middle" class="t l">阶段一：活动松弛 / 推断</text>
+  <rect x="95" y="195" width="125" height="75" rx="15" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/><text x="157" y="240" text-anchor="middle" class="t l">输入 x¹</text>
+  <rect x="300" y="195" width="125" height="75" rx="15" fill="#fff0df" stroke="#e5b174" stroke-width="2"/><text x="362" y="240" text-anchor="middle" class="t l">目标 xᴸ⁺¹</text>
+  <path d="M220 232 L298 232" class="arr" marker-end="url(#a)"/>
+  <rect x="170" y="320" width="220" height="65" rx="15" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/><text x="280" y="360" text-anchor="middle" class="t l">x → x*（能量下降）</text>
+  <path d="M157 270 C157 325 215 335 250 338 M362 270 C362 325 330 335 310 338" class="arr" marker-end="url(#a)"/>
+  <path d="M515 270 L600 270" class="arr" marker-end="url(#a)"/>
+  <rect x="620" y="105" width="455" height="335" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="847" y="147" text-anchor="middle" class="t l">阶段二：权重巩固 / 可塑性</text>
+  <rect x="680" y="200" width="145" height="75" rx="15" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/><text x="752" y="245" text-anchor="middle" class="t l">局部能量 Eₗ</text>
+  <path d="M825 237 L900 237" class="arr" marker-end="url(#a)"/>
+  <rect x="900" y="200" width="125" height="75" rx="15" fill="#fcebe7" stroke="#dfaa9b" stroke-width="2"/><text x="962" y="245" text-anchor="middle" class="t l">Δw</text>
+  <text x="847" y="335" text-anchor="middle" class="t s">Δw = −η ∂E/∂w |ₓ₌ₓ*</text>
+  <text x="847" y="375" text-anchor="middle" class="t s">每条连接使用相邻神经元活动和局部误差</text>
+  <text x="560" y="500" text-anchor="middle" class="t s">神经活动先“试运行”学习后的状态，权重再把这一状态写入网络</text>
+</svg>

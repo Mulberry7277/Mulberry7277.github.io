@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">反向传播与前瞻性配置的学习顺序</title>
+  <desc id="desc">反向传播先更新权重再改变活动，前瞻性配置先让网络活动趋向目标状态再更新权重。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.arr{fill:none;stroke:#66778f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">学习顺序的改变：从权重先行到活动先行</text>
+  <rect x="45" y="98" width="485" height="380" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="287" y="140" text-anchor="middle" class="t l">反向传播</text>
+  <rect x="90" y="188" width="150" height="80" rx="16" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/><text x="165" y="235" text-anchor="middle" class="t l">当前活动</text>
+  <path d="M240 228 L320 228" class="arr" marker-end="url(#a)"/>
+  <rect x="320" y="188" width="150" height="80" rx="16" fill="#fcebe7" stroke="#dfaa9b" stroke-width="2"/><text x="395" y="235" text-anchor="middle" class="t l">更新权重</text>
+  <path d="M395 268 C395 335 165 335 165 268" class="arr" stroke="#d9794b" marker-end="url(#a)"/>
+  <text x="287" y="385" text-anchor="middle" class="t s" fill="#d9794b">更新不同层的权重可能互相干扰</text>
+  <text x="287" y="422" text-anchor="middle" class="t s">活动是权重更新后的结果</text>
+  <rect x="570" y="98" width="485" height="380" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="812" y="140" text-anchor="middle" class="t l">前瞻性配置</text>
+  <rect x="615" y="188" width="150" height="80" rx="16" fill="#deedfd" stroke="#75a7d8" stroke-width="2"/><text x="690" y="235" text-anchor="middle" class="t l">当前活动</text>
+  <path d="M765 228 L845 228" class="arr" marker-end="url(#a)"/>
+  <rect x="845" y="188" width="150" height="80" rx="16" fill="#e7f5ec" stroke="#79b493" stroke-width="2"/><text x="920" y="235" text-anchor="middle" class="t l">前瞻活动</text>
+  <path d="M920 268 C920 335 690 335 690 268" class="arr" stroke="#357fb7" marker-end="url(#a)"/>
+  <text x="812" y="385" text-anchor="middle" class="t s" fill="#357fb7">活动先预见权重更新的结果和副作用</text>
+  <rect x="695" y="405" width="235" height="51" rx="13" fill="#fff0df" stroke="#e5b174" stroke-width="2"/><text x="812" y="438" text-anchor="middle" class="t l">再更新权重</text>
+</svg>

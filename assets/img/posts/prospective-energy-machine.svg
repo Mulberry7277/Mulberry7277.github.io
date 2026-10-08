@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="560" viewBox="0 0 1120 560" role="img" aria-labelledby="title desc">
+  <title id="title">能量机器直观表示前瞻性配置</title>
+  <desc id="desc">神经活动对应可上下滑动的节点，突触权重对应连接节点的杆，松弛过程先移动节点降低能量，学习阶段再调整杆的角度。</desc>
+  <defs>
+    <style>.t{font-family:"Microsoft YaHei","Noto Sans CJK SC","Segoe UI",sans-serif;fill:#26344a}.h{font-size:31px;font-weight:700}.l{font-size:22px;font-weight:700}.s{font-size:18px}.rod{stroke:#357fb7;stroke-width:6;stroke-linecap:round}.spring{fill:none;stroke:#d9794b;stroke-width:4;stroke-linecap:round}.post{stroke:#9aabc0;stroke-width:5}</style>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#66778f"/></marker>
+  </defs>
+  <rect width="1120" height="560" rx="25" fill="#f8fafc"/>
+  <text x="560" y="54" text-anchor="middle" class="t h">能量机器：先移动神经活动，再调整连接</text>
+  <rect x="50" y="100" width="450" height="370" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="275" y="140" text-anchor="middle" class="t l">输入被固定，隐藏节点松弛</text>
+  <line x1="130" y1="190" x2="130" y2="410" class="post"/><line x1="275" y1="190" x2="275" y2="410" class="post"/><line x1="420" y1="190" x2="420" y2="410" class="post"/>
+  <circle cx="130" cy="315" r="21" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/><circle cx="275" cy="270" r="21" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="420" cy="330" r="21" fill="#fff0df" stroke="#e5b174" stroke-width="3"/>
+  <line x1="151" y1="315" x2="254" y2="270" class="rod"/><line x1="296" y1="270" x2="399" y2="330" class="rod"/>
+  <path d="M177 279 q12 -18 24 0 t24 0 t24 0" class="spring"/><path d="M321 287 q12 18 24 0 t24 0 t24 0" class="spring"/>
+  <text x="130" y="440" text-anchor="middle" class="t s">输入</text><text x="275" y="440" text-anchor="middle" class="t s">隐藏</text><text x="420" y="440" text-anchor="middle" class="t s">输出</text>
+  <path d="M500 285 L575 285" stroke="#66778f" stroke-width="4" marker-end="url(#a)"/>
+  <rect x="610" y="100" width="460" height="370" rx="22" fill="#fff" stroke="#d4deea" stroke-width="2"/>
+  <text x="840" y="140" text-anchor="middle" class="t l">学习阶段：输入与目标都固定</text>
+  <line x1="690" y1="190" x2="690" y2="410" class="post"/><line x1="840" y1="190" x2="840" y2="410" class="post"/><line x1="990" y1="190" x2="990" y2="410" class="post"/>
+  <circle cx="690" cy="315" r="21" fill="#deedfd" stroke="#75a7d8" stroke-width="3"/><circle cx="840" cy="300" r="21" fill="#e7f5ec" stroke="#79b493" stroke-width="3"/><circle cx="990" cy="260" r="21" fill="#fff0df" stroke="#e5b174" stroke-width="3"/>
+  <line x1="711" y1="315" x2="819" y2="300" class="rod"/><line x1="861" y1="300" x2="969" y2="260" class="rod"/>
+  <path d="M740 295 q12 -18 24 0 t24 0 t24 0" class="spring"/><path d="M888 280 q12 -18 24 0 t24 0 t24 0" class="spring"/>
+  <text x="690" y="440" text-anchor="middle" class="t s">输入固定</text><text x="840" y="440" text-anchor="middle" class="t s">活动收敛</text><text x="990" y="440" text-anchor="middle" class="t s">目标固定</text>
+  <text x="560" y="510" text-anchor="middle" class="t s">节点高度对应神经活动，杆的方向对应权重；先降能量，再巩固活动配置</text>
+</svg>
